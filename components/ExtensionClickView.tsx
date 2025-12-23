@@ -68,7 +68,7 @@ const ExtensionClickView: React.FC = () => {
             <div className={`absolute inset-0 top-14 transition-opacity duration-500 ease-in-out ${activeTab === 'search' ? 'opacity-100 z-10' : 'opacity-0 z-0'}`}>
               <div className="w-full h-full overflow-y-auto bg-gray-50">
                  <img 
-                  src="https://o.sellersprite.com/docs/202512/sellersprite-2025122302090118054.jpg" 
+                  src="https://o.sellersprite.com/docs/202512/sellersprite-2025122305295498034.jpg" 
                   alt="Amazon検索結果画面におけるSellerSprite拡張機能の分析オーバーレイ表示例" 
                   className="w-full h-auto object-cover opacity-90" 
                   loading="lazy"
@@ -77,22 +77,22 @@ const ExtensionClickView: React.FC = () => {
                  <div className="absolute top-[20%] left-[5%] animate-float-card z-20">
                    <div className="bg-white/95 backdrop-blur shadow-xl p-4 rounded-xl border-l-4 border-jp-cta max-w-[240px] border">
                      <div className="flex justify-between items-start mb-2">
-                       <span className="text-xs font-bold text-gray-400 uppercase">Monthly Sales</span>
+                       <span className="text-xs font-bold text-gray-400 uppercase">アンカーモバイルバッテリー</span>
                        <div className="bg-orange-100 text-[#ff9900] p-1 rounded"><Package size={14} /></div>
                      </div>
-                     <div className="text-2xl font-black text-gray-800 mb-1">75,948個</div>
-                     <p className="text-xs text-gray-600 leading-tight">直近30日の販売数を表示。</p>
+                     <div className="text-2xl font-black text-gray-800 mb-1">1,325回</div>
+                     <p className="text-xs text-gray-600 leading-tight">最近一週間の検索ボリュームを表示。</p>
                    </div>
                  </div>
 
                  <div className="absolute top-[45%] right-[5%] animate-float-card-delayed z-20">
                    <div className="bg-white/95 backdrop-blur shadow-xl p-4 rounded-xl border-l-4 border-green-500 max-w-[240px] border">
                       <div className="flex justify-between items-start mb-2">
-                       <span className="text-xs font-bold text-gray-400 uppercase">Profit Margin</span>
+                       <span className="text-xs font-bold text-gray-400 uppercase">平均価格</span>
                        <div className="bg-green-100 text-green-600 p-1 rounded"><DollarSign size={14} /></div>
                      </div>
-                     <div className="text-2xl font-black text-gray-800 mb-1">74%</div>
-                     <p className="text-xs text-gray-600 leading-tight">FBA手数料を引いた粗利率。</p>
+                     <div className="text-2xl font-black text-gray-800 mb-1">6,705円</div>
+                     <p className="text-xs text-gray-600 leading-tight">該当ページに表示された商品の価格合計/商品数</p>
                    </div>
                  </div>
               </div>
@@ -102,7 +102,7 @@ const ExtensionClickView: React.FC = () => {
             <div className={`absolute inset-0 top-14 transition-opacity duration-500 ease-in-out ${activeTab === 'detail' ? 'opacity-100 z-10' : 'opacity-0 z-0'}`}>
               <div className="w-full h-full overflow-y-auto bg-white">
                  <img 
-                  src="https://picsum.photos/1000/1200?random=graph" 
+                  src="https://o.sellersprite.com/docs/202512/sellersprite-2025122305293435299.jpg" 
                   alt="Amazon商品詳細ページでの価格推移と在庫状況の分析グラフ表示" 
                   className="w-full h-auto object-cover opacity-90" 
                   loading="lazy"

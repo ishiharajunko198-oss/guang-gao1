@@ -39,7 +39,7 @@ const Hero: React.FC = () => {
             </h1>
             
             <p className="text-gray-600 text-lg mb-10 leading-relaxed max-w-2xl mx-auto lg:mx-0">
-              ビッグデータ × AI技術で、競合分析、キーワード发掘、需要予測を完全自動化。<br className="hidden md:block"/>
+              ビッグデータ × AI技術で、竞合分析、キーワード発掘、需要予測を完全自動化。<br className="hidden md:block"/>
               感覚に頼らない「勝てるAmazon運営」を実現します。
             </p>
 
@@ -67,6 +67,7 @@ const Hero: React.FC = () => {
           </div>
 
           {/* Laptop Visual */}
+          {/* IMAGE SPECS: Aspect Ratio 16:10 | Recommended Size: 2000x1250px */}
           <div className="flex-1 w-full max-w-[700px] mt-12 lg:mt-0 relative perspective-2000 group z-10">
             <div className="relative transform transition-transform duration-700 hover:rotate-x-2 animate-float-slow">
               <div className="bg-[#1a1a1a] rounded-t-2xl p-[10px] pb-1 shadow-2xl relative border border-gray-700 ring-1 ring-white/10 mx-auto w-[90%] md:w-full">
@@ -74,14 +75,18 @@ const Hero: React.FC = () => {
                   <img 
                     src="https://picsum.photos/1000/625?random=tech_dashboard" 
                     alt="SellerSprite Amazon分析ダッシュボード画面イメージ" 
-                    className="w-full h-full object-cover opacity-90"
+                    className="w-full h-full object-cover opacity-95 transition-opacity duration-300"
                     width="1000"
                     height="625"
                   />
+                  {/* Subtle Screen Reflection */}
+                  <div className="absolute inset-0 bg-gradient-to-tr from-white/5 to-transparent pointer-events-none"></div>
                 </div>
               </div>
               <div className="relative mx-auto w-[90%] md:w-full">
                  <div className="h-4 bg-[#2a2a2a] rounded-b-xl border-t border-gray-600 shadow-2xl relative z-20"></div>
+                 {/* Trackpad Notch */}
+                 <div className="absolute top-0 left-1/2 -translate-x-1/2 w-20 h-1.5 bg-gray-800 rounded-b-md z-30"></div>
               </div>
             </div>
           </div>

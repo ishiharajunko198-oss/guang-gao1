@@ -5,21 +5,21 @@ import { Testimonial } from '../types';
 const Testimonials: React.FC = () => {
   const reviews: Testimonial[] = [
     {
-      name: "田中 健太 様",
+      name: "田中 様",
       role: "法人 Amazon運営担当",
       image: "https://picsum.photos/100/100?random=30",
       content: "導入前はリサーチに1日3時間かかっていましたが、今では30分で完了します。浮いた時間で商品開発に注力でき、売上が昨対比200%になりました。",
       rating: 5
     },
     {
-      name: "佐藤 美咲 様",
+      name: "佐藤 様",
       role: "個人事業主",
       image: "https://picsum.photos/100/100?random=31",
       content: "競合分析機能が凄いです。ライバルがどんなキーワードで集客しているか丸わかりなので、後発でも勝てる商品ページが作れました。",
       rating: 5
     },
     {
-      name: "鈴木 一郎 様",
+      name: "鈴木 様",
       role: "D2Cブランド マネージャー",
       image: "https://picsum.photos/100/100?random=32",
       content: "初心者にも分かりやすい画面で、データ分析が苦手な私でも直感的に使えました。サポートも手厚く、困った時はすぐに返信が来るので安心です。",
