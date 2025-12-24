@@ -15,17 +15,13 @@ const ExtensionClickView: React.FC = () => {
         
         {/* Header */}
         <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-2 bg-blue-50 text-jp-blue px-4 py-1.5 rounded-full mb-4">
+          <div className="inline-flex items-center gap-2 bg-orange-50 text-[#ff9900] px-4 py-1.5 rounded-full mb-4">
              <MousePointerClick size={18} aria-hidden="true" />
              <span className="font-bold text-sm tracking-wider">BROWSER EXTENSION</span>
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-jp-navy">
             拡張機能 クリックビュー
           </h2>
-          <p className="text-gray-600 mt-4 max-w-2xl mx-auto">
-            Amazonのページを開くだけで、隠れたデータが自動で表示されます。<br/>
-            実際の画面イメージで機能をご確認ください。
-          </p>
         </div>
 
         {/* Toggle Switch */}
@@ -37,8 +33,8 @@ const ExtensionClickView: React.FC = () => {
                 onClick={() => setActiveTab(tab.id)}
                 className={`flex items-center gap-2 px-6 py-3 rounded-full text-sm md:text-base font-bold transition-all duration-300 ${
                   activeTab === tab.id
-                    ? 'bg-jp-navy text-white shadow-md transform scale-105'
-                    : 'text-gray-500 hover:text-gray-800 hover:bg-gray-50'
+                    ? 'bg-[#ff9900] text-white shadow-md transform scale-105'
+                    : 'text-gray-500 hover:text-[#ff9900] hover:bg-gray-50'
                 }`}
               >
                 <tab.icon size={18} aria-hidden="true" />
@@ -77,22 +73,10 @@ const ExtensionClickView: React.FC = () => {
                  <div className="absolute top-[20%] left-[5%] animate-float-card z-20">
                    <div className="bg-white/95 backdrop-blur shadow-xl p-4 rounded-xl border-l-4 border-jp-cta max-w-[240px] border">
                      <div className="flex justify-between items-start mb-2">
-                       <span className="text-xs font-bold text-gray-400 uppercase">アンカーモバイルバッテリー</span>
+                       <span className="text-xs font-bold text-gray-400 uppercase">最近1週間の検索数</span>
                        <div className="bg-orange-100 text-[#ff9900] p-1 rounded"><Package size={14} /></div>
                      </div>
                      <div className="text-2xl font-black text-gray-800 mb-1">1,325回</div>
-                     <p className="text-xs text-gray-600 leading-tight">最近一週間の検索ボリュームを表示。</p>
-                   </div>
-                 </div>
-
-                 <div className="absolute top-[45%] right-[5%] animate-float-card-delayed z-20">
-                   <div className="bg-white/95 backdrop-blur shadow-xl p-4 rounded-xl border-l-4 border-green-500 max-w-[240px] border">
-                      <div className="flex justify-between items-start mb-2">
-                       <span className="text-xs font-bold text-gray-400 uppercase">平均価格</span>
-                       <div className="bg-green-100 text-green-600 p-1 rounded"><DollarSign size={14} /></div>
-                     </div>
-                     <div className="text-2xl font-black text-gray-800 mb-1">6,705円</div>
-                     <p className="text-xs text-gray-600 leading-tight">該当ページに表示された商品の価格合計/商品数</p>
                    </div>
                  </div>
               </div>
@@ -109,13 +93,12 @@ const ExtensionClickView: React.FC = () => {
                  />
                  
                  <div className="absolute top-[25%] left-[8%] animate-float-card z-20">
-                    <div className="bg-white/95 backdrop-blur shadow-xl p-4 rounded-xl border-l-4 border-blue-500 max-w-[260px] border">
+                    <div className="bg-white/95 backdrop-blur shadow-xl p-4 rounded-xl border-l-4 border-[#ff9900] max-w-[260px] border">
                       <div className="flex justify-between items-start mb-2">
-                       <span className="text-xs font-bold text-gray-400 uppercase">Price History</span>
-                       <div className="bg-blue-100 text-blue-600 p-1 rounded"><Activity size={14} /></div>
+                       <span className="text-xs font-bold text-gray-400 uppercase">無料keepa代替</span>
+                       <div className="bg-orange-100 text-[#ff9900] p-1 rounded"><Activity size={14} /></div>
                      </div>
                      <div className="text-sm font-bold text-gray-800 mb-1">価格推移をトラッキング</div>
-                     <p className="text-xs text-gray-600">値上げ・値下げタイミングを分析できます。</p>
                    </div>
                  </div>
               </div>

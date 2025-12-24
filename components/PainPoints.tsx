@@ -97,40 +97,40 @@ const PainPoints: React.FC = () => {
           </div>
 
           {/* Solution 2 */}
-          <div className="bg-blue-50/50 border-2 border-blue-100 p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow transform hover:-translate-y-1">
-            <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-6 shadow-sm text-blue-500">
+          <div className="bg-amber-50/50 border-2 border-amber-100 p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow transform hover:-translate-y-1">
+            <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-6 shadow-sm text-amber-500">
               <Eye size={32} />
             </div>
-            <h3 className="text-xl font-bold text-center text-gray-800 mb-4 border-b border-blue-200 pb-3">
+            <h3 className="text-xl font-bold text-center text-gray-800 mb-4 border-b border-amber-200 pb-3">
               競合データを丸裸に
             </h3>
             <div className="space-y-3">
                <div className="flex items-start gap-2">
-                <CheckCircle2 className="text-blue-500 flex-shrink-0 mt-0.5" size={18} />
+                <CheckCircle2 className="text-amber-500 flex-shrink-0 mt-0.5" size={18} />
                 <p className="text-gray-700 text-sm font-medium">販売状況や在庫数を完全可視化</p>
               </div>
               <div className="flex items-start gap-2">
-                <CheckCircle2 className="text-blue-500 flex-shrink-0 mt-0.5" size={18} />
+                <CheckCircle2 className="text-amber-500 flex-shrink-0 mt-0.5" size={18} />
                 <p className="text-gray-700 text-sm font-medium">ライバルの販売戦略を簡単に把握</p>
               </div>
             </div>
           </div>
 
           {/* Solution 3 */}
-          <div className="bg-green-50/50 border-2 border-green-100 p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow transform hover:-translate-y-1">
-            <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-6 shadow-sm text-green-500">
+          <div className="bg-orange-100/30 border-2 border-orange-200 p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow transform hover:-translate-y-1">
+            <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-6 shadow-sm text-orange-600">
               <TrendingUp size={32} />
             </div>
-            <h3 className="text-xl font-bold text-center text-gray-800 mb-4 border-b border-green-200 pb-3">
+            <h3 className="text-xl font-bold text-center text-gray-800 mb-4 border-b border-orange-200 pb-3">
               データに基づく収益化
             </h3>
             <div className="space-y-3">
               <div className="flex items-start gap-2">
-                <CheckCircle2 className="text-green-500 flex-shrink-0 mt-0.5" size={18} />
+                <CheckCircle2 className="text-orange-600 flex-shrink-0 mt-0.5" size={18} />
                 <p className="text-gray-700 text-sm font-medium">正確なデータで低リスク市場を選定</p>
               </div>
               <div className="flex items-start gap-2">
-                <CheckCircle2 className="text-green-500 flex-shrink-0 mt-0.5" size={18} />
+                <CheckCircle2 className="text-orange-600 flex-shrink-0 mt-0.5" size={18} />
                 <p className="text-gray-700 text-sm font-medium">高利益率商品を一括リサーチ</p>
               </div>
             </div>

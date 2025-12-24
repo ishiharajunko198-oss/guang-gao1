@@ -31,7 +31,7 @@ const Support: React.FC = () => {
             </div>
             <h3 className="text-lg font-bold mb-2">充実のマニュアル完備</h3>
             <p className="text-sm text-gray-600">
-              機能ごとの詳細な図解マニュアルをご用意。初心者の方でも迷わず操作いただけます。
+              機能ごとの詳細な図解マニュアルと動画をご用意。初心者の方でも迷わずご操作いただけます。
             </p>
           </div>
 
@@ -41,7 +41,7 @@ const Support: React.FC = () => {
             </div>
             <h3 className="text-lg font-bold mb-2">定期ウェビナー開催</h3>
             <p className="text-sm text-gray-600">
-              ツールの活用方法だけでなく、最新のAmazonSEO対策などを解説する限定セミナーにご招待。
+            ツールの活用方法だけでなく、最新のAmazon運用ノウハウなどを解説する限定セミナーもご用意しております。
             </p>
           </div>
         </div>

@@ -21,7 +21,7 @@ const InfluencerShowcase: React.FC = () => {
       platform: 'YouTube',
       avatar: "https://o.sellersprite.com/docs/202512/sellersprite-2025122305001195437.jpg",
       thumbnail: "https://img.youtube.com/vi/B-PmCzFqEPY/maxresdefault.jpg",
-      quote: "「【たった１動画で全てわかる】セラースプライトの全機能と活用方法を完全解説」",
+      quote: "「【たった１動画で全てわかる】セラースプライトの全機能と活用方法を完全解説」",
       videoUrl: "https://www.youtube.com/watch?v=B-PmCzFqEPY&t"
     },
     {
@@ -62,11 +62,11 @@ const InfluencerShowcase: React.FC = () => {
   return (
     <section className="py-24 bg-white overflow-hidden">
       <div className="container mx-auto px-4 mb-12 text-center">
-        <span className="text-jp-blue font-bold tracking-[0.2em] text-sm uppercase block mb-3">Influencer Review</span>
+        <span className="text-[#ff9900] font-bold tracking-[0.2em] text-sm uppercase block mb-3">Influencer Review</span>
         <h2 className="text-3xl md:text-4xl font-black text-jp-navy leading-tight">
           物販専門家に<br className="md:hidden"/>ご紹介いただいています
         </h2>
-        <div className="w-16 h-1 bg-jp-gold mx-auto mt-6 rounded-full"></div>
+        <div className="w-16 h-1 bg-[#ff9900] mx-auto mt-6 rounded-full"></div>
       </div>
 
       {/* Marquee Container */}
@@ -102,7 +102,7 @@ const InfluencerShowcase: React.FC = () => {
                     </div>
                   </div>
                   <div className="absolute bottom-3 left-3 flex items-center gap-2">
-                    <span className="bg-jp-red text-white text-[10px] font-bold px-2 py-1 rounded flex items-center gap-1">
+                    <span className="bg-[#ff9900] text-white text-[10px] font-bold px-2 py-1 rounded flex items-center gap-1">
                       <Play size={10} fill="currentColor" /> VIDEO
                     </span>
                   </div>
@@ -130,14 +130,14 @@ const InfluencerShowcase: React.FC = () => {
                       </div>
                     </div>
                     <div className="text-right flex-shrink-0">
-                      <span className="text-[10px] text-jp-blue font-black uppercase tracking-widest border border-jp-blue/20 px-2 py-0.5 rounded">
+                      <span className="text-[10px] text-[#ff9900] font-black tracking-widest border border-[#ff9900]/20 px-2 py-0.5 rounded">
                         {item.platform}
                       </span>
                     </div>
                   </div>
                   
                   <div className="relative pt-2 min-h-[60px]">
-                    <div className="absolute -top-1 -left-1 text-jp-gold opacity-30 text-4xl font-serif">“</div>
+                    <div className="absolute -top-1 -left-1 text-amber-500 opacity-30 text-4xl font-serif">“</div>
                     <p className="text-gray-700 font-bold text-sm md:text-base leading-relaxed italic relative z-10 line-clamp-2">
                       {item.quote}
                     </p>
@@ -148,7 +148,7 @@ const InfluencerShowcase: React.FC = () => {
                       href={item.videoUrl} 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="flex items-center gap-1 text-jp-blue text-xs font-bold hover:underline"
+                      className="flex items-center gap-1 text-[#ff9900] text-xs font-bold hover:underline"
                     >
                       <ExternalLink size={14} />
                       動画をチェックする
@@ -163,7 +163,7 @@ const InfluencerShowcase: React.FC = () => {
 
       <div className="mt-16 text-center">
         <p className="text-gray-400 text-sm font-medium">
-          ※ 掲載されている数値や評価は動画公開当時のものです。最新の情報は各チャンネルにてご確認ください。
+          ※ 詳細の情報は各チャンネルにてご確認ください。
         </p>
       </div>
     </section>

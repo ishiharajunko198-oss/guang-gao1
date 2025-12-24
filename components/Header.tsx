@@ -14,8 +14,8 @@ const Header: React.FC = () => {
   }, []);
 
   const navLinks = [
-    { name: '選ばれる理由', href: '#reasons' },
-    { name: '機能紹介', href: '#features' },
+    { name: '選ばれる強み', href: '#reasons' },
+    { name: '機能一覧', href: '#features' },
     { name: 'お客様の声', href: '#testimonials' },
     { name: '料金プラン', href: '#pricing' },
     { name: 'Q&A', href: '#faq' },
