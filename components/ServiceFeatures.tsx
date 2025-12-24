@@ -139,7 +139,7 @@ const ServiceFeatures: React.FC = () => {
     },
     {
       id: "02",
-      title: "次のヒット商品を\n人より先一歩でリサーチ",
+      title: "人より先一歩で\n次のヒット商品をリサーチ",
       points: ["トレンド商品・急成長商品を選定", "ニッチなブルーオーシャン市場を即発見", "需要・競争・利益性を同時に分析"],
       desc: "「なぜ売れるのか」「今から参入できるのか」を数値で判断します。市場規模・成長性・競争難易度・利益余地をまとめて可視化し、失敗リスクを抑えながら、勝てる商品だけを選び抜きます。",
       icon: BarChart3,
@@ -203,7 +203,7 @@ const ServiceFeatures: React.FC = () => {
           <span className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-[8rem] sm:text-[14rem] font-black text-orange-50/40 select-none -z-10">CORE</span>
           <div className="relative z-10">
             <span className="text-[#ff9900] font-bold tracking-[0.4em] text-sm uppercase mb-4 block">Functions</span>
-            <h2 className="text-3xl sm:text-5xl font-black text-jp-navy mt-4 leading-tight">Amazon運営を加速する機能</h2>
+            <h2 className="text-3xl sm:text-5xl font-black text-jp-navy mt-4 leading-tight">選ばれる「５つの強力な領域」</h2>
             <div className="w-16 h-1.5 bg-[#ff9900] mx-auto mt-10 rounded-full"></div>
           </div>
         </div>
