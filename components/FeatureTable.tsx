@@ -1,5 +1,5 @@
 import React, { useState, useMemo, useRef } from 'react';
-import { Check, Minus, Search, ShoppingBag, Zap, BarChart3, ShieldCheck, ChevronDown, ChevronUp, Plus, LayoutGrid, Download } from 'lucide-react';
+import { Check, Minus, Search, ShoppingBag, Zap, BarChart3, ShieldCheck, ChevronDown, ChevronUp, Plus, LayoutGrid } from 'lucide-react';
 
 interface FeatureItem {
   name: string;
@@ -229,36 +229,6 @@ const FeatureTable: React.FC = () => {
               </button>
             </div>
           )}
-        </div>
-
-        {/* Extension Download Buttons - Production Ready */}
-        <div className="mt-20 flex flex-col md:flex-row items-center justify-center gap-8 border-t border-gray-100 pt-16">
-          <div className="text-center md:text-left mb-4 md:mb-0">
-             <p className="text-jp-navy font-black text-xl mb-2">今すぐ拡張機能を無料インストール</p>
-             <p className="text-gray-500 text-sm">Amazonのページ上で直接データを分析できます</p>
-          </div>
-          <div className="flex flex-col sm:flex-row gap-4">
-            <a 
-              href="#chrome-store" 
-              className="flex items-center gap-3 bg-white text-gray-700 border-2 border-gray-200 hover:border-[#ff9900] hover:text-[#ff9900] transition-all px-8 py-4 rounded-xl shadow-sm hover:shadow-md group"
-            >
-              <Download className="text-gray-400 group-hover:text-[#ff9900] transition-colors" />
-              <div className="text-left">
-                <span className="block text-[10px] font-bold text-gray-400 uppercase leading-none mb-1">Chrome Web Store</span>
-                <span className="block text-base font-black">Chrome版をダウンロード</span>
-              </div>
-            </a>
-            <a 
-              href="#edge-store" 
-              className="flex items-center gap-3 bg-white text-gray-700 border-2 border-gray-200 hover:border-[#ff9900] hover:text-[#ff9900] transition-all px-8 py-4 rounded-xl shadow-sm hover:shadow-md group"
-            >
-              <Download className="text-gray-400 group-hover:text-[#ff9900] transition-colors" />
-              <div className="text-left">
-                <span className="block text-[10px] font-bold text-gray-400 uppercase leading-none mb-1">Microsoft Edge Add-ons</span>
-                <span className="block text-base font-black">Edge版をダウンロード</span>
-              </div>
-            </a>
-          </div>
         </div>
       </div>
     </section>

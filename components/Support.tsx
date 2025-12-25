@@ -19,9 +19,9 @@ const Support: React.FC = () => {
             <div className="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-4 text-jp-blue">
               <HeadphonesIcon size={32} />
             </div>
-            <h3 className="text-lg font-bold mb-2">日本人スタッフによる対応</h3>
+            <h3 className="text-lg font-bold mb-2">無料相談</h3>
             <p className="text-sm text-gray-600">
-              チャット・メールにて日本語で迅速に対応いたします。何でもお聞かせください。
+              Googleミーティング、ZOOMなどにてお打ち合わせを対応させていただきます。お気軽にご連絡ください。
             </p>
           </div>
 

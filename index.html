@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ja">
   <head>
@@ -8,33 +9,6 @@
     <meta name="description" content="Amazon出品者のための最強分析ツール「SellerSprite(セラースプライト)」。AIデータで「売れない」を解決。キーワード選定、競合分析、市場調査を効率化。7日間無料トライアル実施中。" />
     <meta name="keywords" content="Amazon ツール, セラースプライト, Amazon リサーチ, 競合分析, キーワード選定, Amazon SEO, SellerSprite" />
     <link rel="canonical" href="https://www.sellersprite.jp/" />
-
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="SellerSprite(セラースプライト) | Amazon売上最大化" />
-    <meta property="og:description" content="AIデータでAmazonの「売れない」を解決。最強のリサーチツール。" />
-    <meta property="og:image" content="https://www.sellersprite.jp/assets/images/og_image.jpg" />
-    <meta name="twitter:card" content="summary_large_image" />
-
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "SoftwareApplication",
-      "name": "SellerSprite",
-      "operatingSystem": "Web",
-      "applicationCategory": "BusinessApplication",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "JPY",
-        "description": "7-day free trial"
-      },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.8",
-        "reviewCount": "3200"
-      }
-    }
-    </script>
 
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
@@ -55,7 +29,6 @@
               'shimmer': 'shimmer 2s infinite',
               'float-slow': 'float 6s ease-in-out infinite',
               'float-card': 'float-card 4s ease-in-out infinite',
-              'float-card-delayed': 'float-card 4s ease-in-out 2s infinite',
             },
             keyframes: {
               marquee: { '0%': { transform: 'translateX(0)' }, '100%': { transform: 'translateX(-50%)' } },
@@ -70,7 +43,7 @@
 
     <style type="text/tailwindcss">
       @layer base {
-        body { font-family: 'Noto Sans JP', sans-serif; @apply text-gray-900 antialiased overflow-x-hidden; }
+        body { font-family: 'Noto Sans JP', sans-serif; @apply text-gray-900 antialiased overflow-x-hidden bg-white; }
         html { scroll-behavior: smooth; }
         #root { min-height: 100vh; }
         .perspective-2000 { perspective: 2000px; }
@@ -85,37 +58,22 @@
     "react-dom/client": "https://esm.sh/react-dom@19.0.0/client",
     "lucide-react": "https://esm.sh/lucide-react@0.460.0",
     "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
-    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.2",
+    "react/": "https://esm.sh/react@^19.2.3/",
     "vite": "https://esm.sh/vite@^7.3.0",
-    "react/": "https://esm.sh/react@^19.2.3/"
+    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.2"
   }
 }
 </script>
   </head>
   <body>
     <div id="root">
-      <div class="min-h-screen bg-white text-gray-900 font-sans antialiased">
-        <header class="fixed top-0 left-0 right-0 z-50 bg-white/95 border-b border-gray-200 py-4 px-4">
-          <div class="container mx-auto flex justify-between items-center">
-            <img src="https://www.sellersprite.jp/assets/images/SellerSprite_logo_EN.svg" alt="SellerSprite" class="h-9 w-auto">
-            <div class="hidden md:flex gap-8 font-bold text-gray-600">
-              <span>機能一覧</span>
-              <span>お客様の声</span>
-              <span>料金プラン</span>
-            </div>
-            <div class="bg-jp-cta text-white px-6 py-2 rounded-full font-bold">無料で始める</div>
-          </div>
-        </header>
-        <main>
-          <section class="pt-40 pb-20 bg-white text-center">
-            <h1 class="font-black text-jp-navy">
-              <span class="text-5xl block">「売れない」悩みを</span>
-              <span class="text-6xl text-jp-cta block">AIデータで解決する</span>
-            </h1>
-          </section>
-        </main>
+      <div class="min-h-screen flex items-center justify-center bg-white">
+        <div class="flex flex-col items-center">
+          <div class="w-12 h-12 border-4 border-jp-cta border-t-transparent rounded-full animate-spin mb-4"></div>
+          <p class="text-gray-400 font-bold tracking-widest text-xs">LOADING SELLERSPRITE...</p>
+        </div>
       </div>
     </div>
-    <script type="module" src="/index.tsx"></script>
+    <script type="module" src="./index.tsx"></script>
   </body>
 </html>

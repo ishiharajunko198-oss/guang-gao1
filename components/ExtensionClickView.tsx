@@ -56,7 +56,7 @@ const ExtensionClickView: React.FC = () => {
                 <div className="w-3 h-3 rounded-full bg-green-400"></div>
               </div>
               <div className="flex-1 bg-white h-8 rounded border border-gray-300 flex items-center px-3 text-xs text-gray-400 font-mono">
-                amazon.co.jp/{activeTab === 'search' ? 's?k=ladies+socks' : 'dp/B07Q6DW85S'}
+                amazon.co.jp/{activeTab === 'search' ? 's?k=アンカー+モバイルバッテリー' : 'dp/B07Q6DW85S'}
               </div>
             </div>
 

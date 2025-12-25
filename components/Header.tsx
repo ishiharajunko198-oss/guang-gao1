@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, LogIn } from 'lucide-react';
 
-const Header: React.FC = () => {
+interface HeaderProps {
+  onLogoClick?: () => void;
+}
+
+const Header: React.FC<HeaderProps> = ({ onLogoClick }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -14,7 +18,7 @@ const Header: React.FC = () => {
   }, []);
 
   const navLinks = [
-    { name: '選ばれる強み', href: '#reasons' },
+    { name: '５つの領域', href: '#reasons' },
     { name: '機能一覧', href: '#features' },
     { name: 'お客様の声', href: '#testimonials' },
     { name: '料金プラン', href: '#pricing' },
@@ -31,7 +35,10 @@ const Header: React.FC = () => {
     >
       <div className="container mx-auto px-4 flex justify-between items-center">
         {/* SellerSprite Official Logo */}
-        <a href="/" className="flex items-center transition-opacity hover:opacity-80">
+        <button 
+          onClick={onLogoClick}
+          className="flex items-center transition-opacity hover:opacity-80"
+        >
           <img 
             src="https://www.sellersprite.jp/assets/images/SellerSprite_logo_EN.svg" 
             alt="SellerSprite(セラースプライト) - Amazon売上最大化ツール" 
@@ -39,7 +46,7 @@ const Header: React.FC = () => {
             width="180"
             height="40"
           />
-        </a>
+        </button>
 
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-8">
@@ -89,7 +96,10 @@ const Header: React.FC = () => {
               key={link.name} 
               href={link.href} 
               className="text-gray-700 font-medium py-2 border-b border-gray-50"
-              onClick={() => setMobileMenuOpen(false)}
+              onClick={() => {
+                setMobileMenuOpen(false);
+                if (onLogoClick) onLogoClick();
+              }}
             >
               {link.name}
             </a>
