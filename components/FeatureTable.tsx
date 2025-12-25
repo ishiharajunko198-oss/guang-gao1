@@ -1,5 +1,5 @@
 import React, { useState, useMemo, useRef } from 'react';
-import { Check, Minus, Search, ShoppingBag, Zap, BarChart3, ShieldCheck, ChevronDown, ChevronUp, Plus, LayoutGrid } from 'lucide-react';
+import { Check, Minus, Search, ShoppingBag, Zap, BarChart3, ShieldCheck, ChevronDown, ChevronUp, Plus, LayoutGrid, Download } from 'lucide-react';
 
 interface FeatureItem {
   name: string;
@@ -239,6 +239,30 @@ const FeatureTable: React.FC = () => {
               </button>
             </div>
           )}
+        </div>
+
+        {/* Extension Download Buttons */}
+        <div className="mt-16 flex flex-col md:flex-row items-center justify-center gap-6">
+          <a 
+            href="#chrome-store" 
+            className="w-full md:w-auto flex items-center justify-center gap-3 bg-white text-gray-700 border-2 border-gray-200 hover:border-[#ff9900] hover:text-[#ff9900] transition-all px-8 py-4 rounded-xl shadow-sm hover:shadow-md group"
+          >
+            <Download className="group-hover:translate-y-0.5 transition-transform" />
+            <div className="text-left">
+              <span className="block text-[10px] font-bold text-gray-400 uppercase leading-none mb-1">Chrome Web Store</span>
+              <span className="block text-base font-black">Chrome版をダウンロード</span>
+            </div>
+          </a>
+          <a 
+            href="#edge-store" 
+            className="w-full md:w-auto flex items-center justify-center gap-3 bg-white text-gray-700 border-2 border-gray-200 hover:border-[#ff9900] hover:text-[#ff9900] transition-all px-8 py-4 rounded-xl shadow-sm hover:shadow-md group"
+          >
+            <Download className="group-hover:translate-y-0.5 transition-transform" />
+            <div className="text-left">
+              <span className="block text-[10px] font-bold text-gray-400 uppercase leading-none mb-1">Microsoft Edge Add-ons</span>
+              <span className="block text-base font-black">Edge版をダウンロード</span>
+            </div>
+          </a>
         </div>
       </div>
     </section>

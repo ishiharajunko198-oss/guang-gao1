@@ -23,12 +23,14 @@ const App: React.FC = () => {
         <IntroPoints />
         <PainPoints />
         <ServiceFeatures />
-        <FeatureTable />
+        {/* 将 CTA 调整至 Comparison (FeatureTable) 上方 */}
         <MidSectionCTA />
+        <FeatureTable />
         <ExtensionClickView />
         <InfluencerShowcase />
         <Testimonials />
         <Support />
+        {/* Q&A 上方的 CTA 位置保持不变 */}
         <MidSectionCTA />
         <Faq />
       </main>

@@ -66,11 +66,7 @@ const FeatureRow: React.FC<{ feature: FeatureProps }> = ({ feature }) => {
           {feature.desc}
         </p>
         
-        <div className="flex flex-wrap gap-4">
-          <a href="#register" className="inline-flex items-center text-white bg-jp-navy px-10 py-4 rounded-full font-bold hover:bg-[#ff9900] transition-all shadow-xl hover:shadow-2xl transform hover:-translate-y-1 group">
-            詳細をチェック <ArrowRight size={18} className="ml-2 transition-transform group-hover:translate-x-1" />
-          </a>
-        </div>
+        {/* Button container removed as per user request */}
       </div>
 
       {/* Image Slider */}
@@ -127,7 +123,7 @@ const ServiceFeatures: React.FC = () => {
       id: "01",
       title: "「売れるキーワード」を\n逃さず見つける",
       points: ["数百・数千の関連ワードを瞬時に抽出", "競合の流入ワード・注文ワードまで把握可能", "SEO対策に必要な検索順位を自動追跡"],
-      desc: "月間検索ボリューム・競合状況・PPC入札額などを一括分析し、無駄な施策を減らし、購買につながるキーワード戦略を実現できます。感覚や経験に頼らない、データ主導のAmazon SEO・集客を今すぐ始められます。",
+      desc: "月間検索ボリューム・競合状況・PPC入札額などを一括分析し、无駄な施策を減らし、購買につながるキーワード戦略を実現できます。感覚や経験に頼らない、データ主導のAmazon SEO・集客を今すぐ始められます。",
       icon: Search,
       images: [
         "https://o.sellersprite.com/docs/202512/sellersprite-2025122311423206327.jpg",
@@ -155,7 +151,7 @@ const ServiceFeatures: React.FC = () => {
       id: "03",
       title: "ライバルの裏側を\nデータで完全可視化",
       points: ["販売数・売上・在庫推移をリアルタイム監視", "レビュー分析で顧客の不満点を抽出", "広告のキーワード戦略を把握"],
-      desc: "競合の売上データから広告の打ち方まで、丸裸にします。後発からでも勝てるポイントを見つけ出し、効率的な差別化を実現します。",
+      desc: "竞合の売上データから広告の打ち方まで、丸裸にします。後発からでも勝てるポイントを見つけ出し、効率的な差別化を実現します。",
       icon: Users,
       images: [
         "https://o.sellersprite.com/docs/202512/sellersprite-2025122301024542448.jpg",
@@ -182,7 +178,7 @@ const ServiceFeatures: React.FC = () => {
     {
       id: "05",
       title: "AIを最強のアシスタントに！",
-      points: ["競合商品をAIが特定・提案", "市場全体の状況を自動分析", "Keepaグラフをまとめてテキスト解析"],
+      points: ["竞合商品をAIが特定・提案", "市場全体の状況を自動分析", "Keepaグラフをまとめてテキスト解析"],
       desc: "初心者も安心！何時間もかけて行っていた競合探し、市場分析、グラフ読み取りをAI（Gemini搭載）が一瞬で代行。複雑なデータを整理し、「今見るべきポイント」だけをわかりやすく提示します。",
       icon: FileText,
       images: [
