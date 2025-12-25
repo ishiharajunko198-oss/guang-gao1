@@ -23,15 +23,19 @@ const App: React.FC = () => {
         <IntroPoints />
         <PainPoints />
         <ServiceFeatures />
-        {/* 将 CTA 调整至 Comparison (FeatureTable) 上方 */}
+        
+        {/* Comparison (FeatureTable) の直前に CTA を配置 */}
         <MidSectionCTA />
+        
         <FeatureTable />
         <ExtensionClickView />
         <InfluencerShowcase />
         <Testimonials />
         <Support />
-        {/* Q&A 上方的 CTA 位置保持不变 */}
+        
+        {/* Q&A の前の位置は維持 */}
         <MidSectionCTA />
+        
         <Faq />
       </main>
       <Footer />

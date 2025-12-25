@@ -28,7 +28,6 @@ const FeatureTable: React.FC = () => {
 
   const handleGlobalCollapse = () => {
     setIsGlobalExpanded(false);
-    // 稍作延迟确保DOM高度更新后滚动到准确位置
     setTimeout(() => {
       sectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }, 10);
@@ -109,10 +108,10 @@ const FeatureTable: React.FC = () => {
           {item.name}
         </div>
       </td>
-      <td className="py-4 px-4 text-center transition-colors">
+      <td className="py-4 px-4 text-center">
         <div className="flex justify-center">
           {item.web ? (
-            <div className="w-8 h-8 rounded-full bg-orange-100 flex items-center justify-center text-orange-500 shadow-sm border border-orange-200 transition-all group-hover:bg-[#ff9900] group-hover:text-white group-hover:border-[#ff9900] group-hover:shadow-md">
+            <div className="w-8 h-8 rounded-full bg-orange-100 flex items-center justify-center text-orange-500 shadow-sm border border-orange-200 transition-all group-hover:bg-[#ff9900] group-hover:text-white group-hover:border-[#ff9900]">
               <Check size={18} strokeWidth={3} />
             </div>
           ) : (
@@ -120,10 +119,10 @@ const FeatureTable: React.FC = () => {
           )}
         </div>
       </td>
-      <td className="py-4 px-4 text-center bg-orange-50/10 transition-colors">
+      <td className="py-4 px-4 text-center bg-orange-50/10">
         <div className="flex justify-center">
           {item.extension ? (
-            <div className="w-8 h-8 rounded-full bg-[#ff9900] flex items-center justify-center text-white shadow-md transform group-hover:scale-110 group-hover:bg-[#e68a00] transition-all">
+            <div className="w-8 h-8 rounded-full bg-[#ff9900] flex items-center justify-center text-white shadow-md transform group-hover:scale-110 transition-all">
               <Check size={18} strokeWidth={3} />
             </div>
           ) : (
@@ -156,14 +155,12 @@ const FeatureTable: React.FC = () => {
                 <thead>
                   <tr>
                     <th className="py-8 px-8 md:px-12 text-left bg-[#0F2C4C] text-white text-lg font-bold w-1/2">
-                      分析・機能項目(一部表示)＊詳細はHPまで
+                      分析・機能項目(一部表示)
                     </th>
-                    <th className="py-8 px-4 text-center bg-[#0F2C4C] text-white w-1/4 border-l border-white/10">
-                      <span className="block text-[10px] uppercase tracking-widest opacity-60 mb-1">Web Version</span>
+                    <th className="py-8 px-4 text-center bg-[#0F2C4C] text-white w-1/4 border-l border-white/10 text-sm">
                       ウェブ版
                     </th>
-                    <th className="py-8 px-4 text-center bg-[#0F2C4C] text-white w-1/4 border-l border-white/10">
-                      <span className="block text-[10px] uppercase tracking-widest opacity-60 mb-1">Extension</span>
+                    <th className="py-8 px-4 text-center bg-[#0F2C4C] text-white w-1/4 border-l border-white/10 text-sm font-black">
                       拡張機能版
                     </th>
                   </tr>
@@ -177,7 +174,6 @@ const FeatureTable: React.FC = () => {
 
                     return (
                       <React.Fragment key={cat.id}>
-                        {/* Category Header Row */}
                         <tr className="bg-slate-50">
                           <td colSpan={3} className="py-6 px-8 md:px-10 border-b border-gray-200">
                             <div className="flex items-center gap-4">
@@ -188,13 +184,8 @@ const FeatureTable: React.FC = () => {
                             </div>
                           </td>
                         </tr>
-
-                        {/* Items */}
                         {initialItems.map((item, idx) => renderItemRow(cat.id, item, idx))}
-                        
                         {isExpanded && hiddenItems.map((item, idx) => renderItemRow(cat.id, item, idx + 4))}
-
-                        {/* Inner Expand Toggle */}
                         {hiddenItems.length > 0 && (
                           <tr className="border-b border-gray-100">
                             <td colSpan={3} className="py-3 px-8 md:px-12">
@@ -216,7 +207,6 @@ const FeatureTable: React.FC = () => {
             </div>
           </div>
 
-          {/* Global View More Button Overlay */}
           {!isGlobalExpanded ? (
             <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-white via-white/90 to-transparent flex items-end justify-center pb-12 z-10">
               <button 
@@ -241,28 +231,34 @@ const FeatureTable: React.FC = () => {
           )}
         </div>
 
-        {/* Extension Download Buttons */}
-        <div className="mt-16 flex flex-col md:flex-row items-center justify-center gap-6">
-          <a 
-            href="#chrome-store" 
-            className="w-full md:w-auto flex items-center justify-center gap-3 bg-white text-gray-700 border-2 border-gray-200 hover:border-[#ff9900] hover:text-[#ff9900] transition-all px-8 py-4 rounded-xl shadow-sm hover:shadow-md group"
-          >
-            <Download className="group-hover:translate-y-0.5 transition-transform" />
-            <div className="text-left">
-              <span className="block text-[10px] font-bold text-gray-400 uppercase leading-none mb-1">Chrome Web Store</span>
-              <span className="block text-base font-black">Chrome版をダウンロード</span>
-            </div>
-          </a>
-          <a 
-            href="#edge-store" 
-            className="w-full md:w-auto flex items-center justify-center gap-3 bg-white text-gray-700 border-2 border-gray-200 hover:border-[#ff9900] hover:text-[#ff9900] transition-all px-8 py-4 rounded-xl shadow-sm hover:shadow-md group"
-          >
-            <Download className="group-hover:translate-y-0.5 transition-transform" />
-            <div className="text-left">
-              <span className="block text-[10px] font-bold text-gray-400 uppercase leading-none mb-1">Microsoft Edge Add-ons</span>
-              <span className="block text-base font-black">Edge版をダウンロード</span>
-            </div>
-          </a>
+        {/* Extension Download Buttons - Production Ready */}
+        <div className="mt-20 flex flex-col md:flex-row items-center justify-center gap-8 border-t border-gray-100 pt-16">
+          <div className="text-center md:text-left mb-4 md:mb-0">
+             <p className="text-jp-navy font-black text-xl mb-2">今すぐ拡張機能を無料インストール</p>
+             <p className="text-gray-500 text-sm">Amazonのページ上で直接データを分析できます</p>
+          </div>
+          <div className="flex flex-col sm:flex-row gap-4">
+            <a 
+              href="#chrome-store" 
+              className="flex items-center gap-3 bg-white text-gray-700 border-2 border-gray-200 hover:border-[#ff9900] hover:text-[#ff9900] transition-all px-8 py-4 rounded-xl shadow-sm hover:shadow-md group"
+            >
+              <Download className="text-gray-400 group-hover:text-[#ff9900] transition-colors" />
+              <div className="text-left">
+                <span className="block text-[10px] font-bold text-gray-400 uppercase leading-none mb-1">Chrome Web Store</span>
+                <span className="block text-base font-black">Chrome版をダウンロード</span>
+              </div>
+            </a>
+            <a 
+              href="#edge-store" 
+              className="flex items-center gap-3 bg-white text-gray-700 border-2 border-gray-200 hover:border-[#ff9900] hover:text-[#ff9900] transition-all px-8 py-4 rounded-xl shadow-sm hover:shadow-md group"
+            >
+              <Download className="text-gray-400 group-hover:text-[#ff9900] transition-colors" />
+              <div className="text-left">
+                <span className="block text-[10px] font-bold text-gray-400 uppercase leading-none mb-1">Microsoft Edge Add-ons</span>
+                <span className="block text-base font-black">Edge版をダウンロード</span>
+              </div>
+            </a>
+          </div>
         </div>
       </div>
     </section>
