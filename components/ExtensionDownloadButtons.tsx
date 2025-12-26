@@ -20,7 +20,7 @@ const ExtensionDownloadButtons: React.FC = () => {
               <Download className="text-gray-400 group-hover:text-[#ff9900] transition-colors" />
               <div className="text-left">
                 <span className="block text-[10px] font-bold text-gray-400 uppercase leading-none mb-1">Chrome Web Store</span>
-                <span className="block text-base font-black">Chrome版をダウンロード</span>
+                <span className="block text-base font-black">Chromeに無料で追加</span>
               </div>
             </a>
             <a 
@@ -32,7 +32,7 @@ const ExtensionDownloadButtons: React.FC = () => {
               <Download className="text-gray-400 group-hover:text-[#ff9900] transition-colors" />
               <div className="text-left">
                 <span className="block text-[10px] font-bold text-gray-400 uppercase leading-none mb-1">Microsoft Edge Add-ons</span>
-                <span className="block text-base font-black">Edge版をダウンロード</span>
+                <span className="block text-base font-black">Edgeに無料で追加</span>
               </div>
             </a>
           </div>

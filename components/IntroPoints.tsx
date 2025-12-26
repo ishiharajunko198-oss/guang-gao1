@@ -9,7 +9,7 @@ const IntroPoints: React.FC = () => {
 
       <div className="container mx-auto px-4 relative z-10 flex flex-col items-center">
         {/* Headline - Centered */}
-        <h2 className="text-2xl md:text-3xl font-bold text-[#0f2c4c] mb-10 tracking-wide text-center">
+        <h2 className="text-[1.15rem] xs:text-[1.25rem] sm:text-2xl md:text-3xl font-bold text-[#0f2c4c] mb-10 tracking-wide text-center whitespace-nowrap">
           <span className="text-[#ff9900]">SellerSprite</span>（セラースプライト）とは
         </h2>
 

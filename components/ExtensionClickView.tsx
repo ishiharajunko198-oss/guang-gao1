@@ -5,8 +5,8 @@ const ExtensionClickView: React.FC = () => {
   const [activeTab, setActiveTab] = useState<'search' | 'detail'>('search');
 
   const tabs = [
-    { id: 'search', label: '① 検索結果で即・分析', icon: Search },
-    { id: 'detail', label: '② グラフで詳細トレンド', icon: TrendingUp },
+    { id: 'search', label: '検索結果で即分析', icon: Search },
+    { id: 'detail', label: '商品詳細ページで情報入手', icon: TrendingUp },
   ] as const;
 
   return (

@@ -35,24 +35,24 @@ const Hero: React.FC = () => {
         <div className="w-full flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-16" style={{ maxWidth: '1280px' }}>
           
           <div className="flex-1 text-center lg:text-left min-w-[320px] z-10 lg:max-w-[55%] flex flex-col items-center lg:items-start">
-            <div className="inline-flex items-center gap-3 mb-10 bg-white/90 shadow-[0_2px_15px_rgba(255,153,0,0.1)] backdrop-blur-sm px-6 py-2.5 rounded-full border border-orange-100">
-              <span className="w-2.5 h-2.5 rounded-full bg-[#ff9900]"></span>
-              <p className="text-gray-600 font-bold text-sm tracking-widest uppercase">AMAZON出品者向け リサーチ・分析ツール</p>
+            <div className="inline-flex items-center gap-2 sm:gap-3 mb-10 bg-white/90 shadow-[0_2px_15px_rgba(255,153,0,0.1)] backdrop-blur-sm px-4 sm:px-6 py-2.5 rounded-full border border-orange-100 max-w-full">
+              <span className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-[#ff9900] flex-shrink-0"></span>
+              <p className="text-gray-600 font-bold text-[9px] xs:text-xs sm:text-sm tracking-widest whitespace-nowrap">Amazon出品者向け リサーチ・分析ツール</p>
             </div>
             
             <h1 className="font-black leading-[1.2] mb-10 tracking-tight w-full">
-              <span className="text-3xl sm:text-5xl lg:text-[4.2rem] text-jp-navy block whitespace-nowrap font-black mb-2">
+              <span className="text-[1.5rem] sm:text-5xl lg:text-[4.2rem] text-jp-navy block whitespace-nowrap font-black mb-2">
                 「売れない」悩みを
               </span>
               <span className="relative block">
-                <span className="text-4xl sm:text-6xl lg:text-[5.4rem] bg-clip-text text-transparent bg-gradient-to-r from-[#ff9900] via-[#ffb347] to-[#ff9900] block whitespace-nowrap font-black leading-tight drop-shadow-[0_4px_10px_rgba(255,153,0,0.35)]">
+                <span className="text-[1.75rem] sm:text-[3.5rem] lg:text-[5.4rem] bg-clip-text text-transparent bg-gradient-to-r from-[#ff9900] via-[#ffb347] to-[#ff9900] block whitespace-nowrap font-black leading-tight drop-shadow-[0_4px_10px_rgba(255,153,0,0.35)]">
                   データで解決する
                 </span>
               </span>
             </h1>
             
             <p className="text-gray-500 text-lg lg:text-xl mb-12 leading-relaxed max-w-2xl mx-auto lg:mx-0 font-medium">
-              ビッグデータ × AI技術で、競合分析、キーワード発掘、需要予測を完全サポート。<br className="hidden md:block"/>
+              ビッグデータ × AI技術で、竞合分析、キーワード発掘、需要予測を完全サポート。<br className="hidden md:block"/>
               感覚に頼らない「勝てるAmazon運営」を実現します。
             </p>
 

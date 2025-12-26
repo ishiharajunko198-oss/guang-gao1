@@ -6,14 +6,14 @@ const Testimonials: React.FC = () => {
   const reviews: Testimonial[] = [
     {
       name: "田中 様",
-      role: "法人 Amazon運営担当",
+      role: "法人 Amazon运营担当",
       image: "https://o.sellersprite.com/docs/202512/sellersprite-2025122405122744197.jpg",
       content: "導入前はリサーチに1日3時間かかっていましたが、今では30分で完了します。浮いた時間で商品開発に注力でき、売上が昨対比200%になりました。",
       rating: 5
     },
     {
       name: "佐藤 様",
-      role: "個人事業主",
+      role: "个人事业主",
       image: "https://o.sellersprite.com/docs/202512/sellersprite-2025122405122754016.jpg",
       content: "競合分析機能が凄いです。ライバルがどんなキーワードで集客しているか丸わかりなので、後発でも勝てる商品ページが作れました。",
       rating: 5
@@ -61,7 +61,7 @@ const Testimonials: React.FC = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
           <span className="text-[#ff9900] font-bold tracking-widest text-sm uppercase">Voice</span>
-          <h2 className="text-3xl font-bold mt-2">
+          <h2 className="text-[1.15rem] xs:text-2xl sm:text-3xl font-bold mt-2 whitespace-nowrap">
             導入企業様・ユーザー様の声
           </h2>
           <p className="text-gray-300 mt-4">

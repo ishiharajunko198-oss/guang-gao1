@@ -2,7 +2,7 @@ import React from 'react';
 
 const MidSectionCTA: React.FC = () => {
   return (
-    <section className="bg-[#0f2c4c] py-8 sm:py-10 border-y border-[#0d2540] overflow-hidden">
+    <section className="bg-[#0f2c4c] py-8 sm:py-12 border-y border-[#0d2540] overflow-hidden">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row items-center justify-center md:justify-between gap-8 max-w-6xl mx-auto">
           
@@ -35,15 +35,17 @@ const MidSectionCTA: React.FC = () => {
           </div>
 
           {/* Center: CTA Text & Button */}
-          <div className="flex-1 text-center px-4">
-             <h3 className="text-white text-lg sm:text-2xl font-bold mb-6 tracking-wide drop-shadow-md flex items-center justify-center whitespace-nowrap">
-               <span className="font-light opacity-50 text-2xl sm:text-3xl mr-3">\</span>
-               <span>SellerSpriteを実際に操作して機能・画面を確認！</span>
-               <span className="font-light opacity-50 text-2xl sm:text-3xl ml-3">/</span>
+          <div className="flex-1 text-center px-2 sm:px-4 flex flex-col items-center min-w-0">
+             <h3 className="text-white text-[13px] xs:text-[16px] sm:text-[20px] md:text-2xl font-bold mb-8 tracking-wide drop-shadow-md flex items-center justify-center flex-wrap leading-relaxed">
+               <span className="font-light opacity-50 text-xl sm:text-2xl md:text-3xl mr-1 sm:mr-3 flex-shrink-0 hidden xs:inline">\</span>
+               <span className="px-1 whitespace-normal md:whitespace-nowrap text-center max-w-full">
+                 SellerSpriteで機能・画面を確認！
+               </span>
+               <span className="font-light opacity-50 text-xl sm:text-2xl md:text-3xl ml-1 sm:ml-3 flex-shrink-0 hidden xs:inline">/</span>
              </h3>
              <a 
                href="#register"
-               className="inline-block bg-[#ffc600] hover:bg-[#e6b200] text-[#0f2c4c] font-bold text-lg py-3.5 px-10 rounded-full shadow-lg shadow-black/10 transition-transform transform hover:-translate-y-1"
+               className="inline-block bg-[#ffc600] hover:bg-[#e6b200] text-[#0f2c4c] font-bold text-base sm:text-lg py-3.5 px-8 sm:px-12 rounded-full shadow-lg shadow-black/10 transition-transform transform hover:-translate-y-1 whitespace-nowrap active:scale-95"
              >
                無料で7日間試してみる
              </a>

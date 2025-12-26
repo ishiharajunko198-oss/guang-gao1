@@ -6,7 +6,7 @@ const Support: React.FC = () => {
     <section className="py-20 bg-white border-b border-gray-100">
       <div className="container mx-auto px-4">
          <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-gray-900">
+          <h2 className="text-[1.15rem] xs:text-2xl sm:text-3xl font-bold text-gray-900 whitespace-nowrap">
             導入後も安心の充実サポート
           </h2>
           <p className="text-gray-600 mt-2">

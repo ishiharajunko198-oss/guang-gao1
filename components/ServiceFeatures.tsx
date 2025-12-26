@@ -136,7 +136,7 @@ const ServiceFeatures: React.FC = () => {
     {
       id: "02",
       title: "人より先一歩で\n次のヒット商品をリサーチ",
-      points: ["トレンド商品・急成長商品を選定", "ニッチなブルーオーシャン市場を即発見", "需要・競争・利益性を同時に分析"],
+      points: ["トレンド商品・急成長商品を選定", "ニッチなブルーオーシャン市場を即発見", "迷わず参入できるカテゴリーを絞り込みます。"],
       desc: "「なぜ売れるのか」「今から参入できるのか」を数値で判断します。市場規模・成長性・競争難易度・利益余地をまとめて可視化し、失敗リスクを抑えながら、勝てる商品だけを選び抜きます。",
       icon: BarChart3,
       images: [
@@ -165,7 +165,7 @@ const ServiceFeatures: React.FC = () => {
       id: "04",
       title: "無料機能・運営効率化",
       points: ["商品カタログ作成にAIが補助", "keepa API連携でkeepaデータを無料提供", "正規リンク、集合リンク、「カートに入れる」リンクを簡単作成"],
-      desc: "商品カタログ作成の手間とミスを減らし、誰でも安定した品質のページを短時間で作成できます。さらに、keepa代替機能で価格推移・ランキング変動のチェックもスムーズ。",
+      desc: "商品カタログ作成の手間とミスを减らし、誰でも安定した品質のページを短時間で作成できます。さらに、keepa代替機能で価格推移・ランキング変動のチェックもスムーズ。",
       icon: Target,
       images: [
         "https://o.sellersprite.com/docs/202512/sellersprite-2025122304295488924.jpg",
@@ -179,7 +179,7 @@ const ServiceFeatures: React.FC = () => {
       id: "05",
       title: "AIを最強のアシスタントに！",
       points: ["竞合商品をAIが特定・提案", "市場全体の状況を自動分析", "Keepaグラフをまとめてテキスト解析"],
-      desc: "初心者も安心！何時間もかけて行っていた競合探し、市場分析、グラフ読み取りをAI（Gemini搭載）が一瞬で代行。複雑なデータを整理し、「今見るべきポイント」だけをわかりやすく提示します。",
+      desc: "初心者も安心！何時間もかけて行っていた競合探し、市场分析、グラフ読み取りをAI（Gemini搭載）が一瞬で代行。複雑なデータを整理し、「今見るべきポイント」だけをわかりやすく提示します。",
       icon: FileText,
       images: [
         "https://o.sellersprite.com/docs/202512/sellersprite-2025122404453944341.jpg",
@@ -199,7 +199,7 @@ const ServiceFeatures: React.FC = () => {
           <span className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-[8rem] sm:text-[14rem] font-black text-orange-50/40 select-none -z-10">CORE</span>
           <div className="relative z-10">
             <span className="text-[#ff9900] font-bold tracking-[0.4em] text-sm uppercase mb-4 block">Functions</span>
-            <h2 className="text-3xl sm:text-5xl font-black text-jp-navy mt-4 leading-tight">選ばれる「５つの強力な領域」</h2>
+            <h2 className="text-[1.2rem] xs:text-[1.35rem] sm:text-5xl font-black text-jp-navy mt-4 leading-tight whitespace-nowrap">選ばれる「５つの強力な領域」</h2>
             <div className="w-16 h-1.5 bg-[#ff9900] mx-auto mt-10 rounded-full"></div>
           </div>
         </div>
