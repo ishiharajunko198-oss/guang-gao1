@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import { Star } from 'lucide-react';
 import { Testimonial } from '../types';
@@ -64,7 +65,7 @@ const Testimonials: React.FC = () => {
           <h2 className="text-[1.15rem] xs:text-2xl sm:text-3xl font-bold mt-2 whitespace-nowrap">
             導入企業様・ユーザー様の声
           </h2>
-          <p className="text-gray-300 mt-4">
+          <p className="text-gray-300 mt-4 whitespace-nowrap text-[10px] xs:text-xs sm:text-sm md:text-base">
            全世界超100万人のセラー様にご利用いただいています
           </p>
         </div>

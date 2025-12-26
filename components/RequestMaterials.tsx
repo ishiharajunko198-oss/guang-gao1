@@ -1,3 +1,4 @@
+
 import React, { useState, useRef } from 'react';
 import { CheckCircle2, ChevronRight, Loader2, Send, Download, FileText, AlertCircle, ShieldCheck, Lock } from 'lucide-react';
 
@@ -129,11 +130,11 @@ const RequestMaterials: React.FC = () => {
               </h3>
               <ul className="space-y-4 text-gray-600 text-[13px] font-medium">
                 {[
-                  "・開発会社について", 
-                  "・セラースプライトとは", 
-                  "・セラースプライトで解決できる課題", 
-                  "・コア機能及び活用方法", 
-                  "・セミナー開催など",
+                  "開発会社について", 
+                  "セラースプライトとは", 
+                  "セラースプライトで解決できる課題", 
+                  "コア機能及び活用方法", 
+                  "セミナー開催など",
                 ].map((text, i) => (
                   <li key={i} className="flex items-start gap-2">
                     <span className="text-jp-cta mt-0.5">•</span>
@@ -154,8 +155,7 @@ const RequestMaterials: React.FC = () => {
                 <ShieldCheck size={18} className="text-gray-400 shrink-0" />
                 <span>
                   このサイトはGoogle reCAPTCHAによって保護されています。 
-                  <a href={PRIVACY_POLICY_URL} target="_blank" rel="noopener noreferrer" className="text-jp-blue hover:underline ml-1">プライバシーポリシー</a> ・ 
-                  <a href="#" className="text-jp-blue hover:underline">利用規約</a>
+                  <a href={PRIVACY_POLICY_URL} target="_blank" rel="noopener noreferrer" className="text-jp-blue hover:underline ml-1">プライバシーポリシー</a>
                 </span>
               </p>
             </div>

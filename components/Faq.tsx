@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { Plus, Minus } from 'lucide-react';
 import { FaqItem } from '../types';
@@ -51,7 +52,7 @@ const Faq: React.FC = () => {
                 aria-expanded={openIndex === index}
               >
                 <span className="font-bold text-gray-800 text-lg pr-8">
-                  <span className="text-[#ff9900] mr-2">Q.</span>{faq.question}
+                  <span className="text-[#ff9900] mr-2 text-base">Q.</span>{faq.question}
                 </span>
                 {openIndex === index ? (
                   <Minus className="text-[#ff9900] flex-shrink-0" aria-hidden="true" />

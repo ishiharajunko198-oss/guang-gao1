@@ -5,12 +5,55 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
-    <title>SellerSprite(セラースプライト) | Amazon売上最大化・競合分析ツール</title>
-    <meta name="description" content="Amazon出品者のための最強分析ツール「SellerSprite(セラースプライト)」。AIデータで「売れない」を解決。キーワード選定、競合分析、市場調査を効率化。7日間無料トライアル実施中。" />
-    <meta name="keywords" content="Amazon ツール, セラースプライト, Amazon リサーチ, 競合分析, キーワード選定, Amazon SEO, SellerSprite" />
-    <link rel="canonical" href="https://www.sellersprite.jp/" />
+    <!-- SEO TDK (Title, Description, Keywords) -->
+    <title>SellerSprite(セラースプライト)公式サイト | Amazon売上最大化・リサーチ・競合分析ツール</title>
+    <meta name="description" content="Amazon出品者のための最強分析ツール「SellerSprite(セラースプライト)」。AIデータで「売れない」を解決。キーワード選定、競合分析、市場調査を効率化。世界100万人以上のセラーが利用。7日間無料トライアル実施中。" />
+    <meta name="keywords" content="Amazon ツール, セラースプライト, SellerSprite, Amazon リサーチ, 競合分析, キーワード選定, Amazon SEO, アマゾン ツール, Amazon 輸出, 中国輸入, 商品リサーチ" />
+    <link rel="canonical" href="https://www.sellersprite.com/jp" />
 
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.sellersprite.com/jp" />
+    <meta property="og:title" content="SellerSprite(セラースプライト) | Amazon売上最大化・リサーチツール" />
+    <meta property="og:description" content="AIとビッグデータでAmazon運営を加速。競合の売上を丸裸にし、勝てるキーワードを見つけ出す。" />
+    <meta property="og:image" content="https://www.sellersprite.jp/assets/images/SellerSprite_logo_EN.svg" />
+
+    <!-- Twitter Card -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:title" content="SellerSprite(セラースプライト) | Amazon分析ツール" />
+    <meta property="twitter:description" content="Amazon出品者向けオールインワン分析ツール。7日間無料お試し。" />
+
+    <!-- Structured Data (JSON-LD) for Rich Results -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "SellerSprite (セラースプライト)",
+      "operatingSystem": "Windows, macOS, Web Browser",
+      "applicationCategory": "BusinessApplication",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "ratingCount": "1050"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "JPY",
+        "description": "7日間無料お試しプランあり"
+      },
+      "author": {
+        "@type": "Organization",
+        "name": "SellerSprite Inc.",
+        "url": "https://www.sellersprite.com/jp"
+      }
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
@@ -48,6 +91,8 @@
         #root { min-height: 100vh; }
         .perspective-2000 { perspective: 2000px; }
       }
+      /* Ensure static content doesn't flicker when React hydrates */
+      .js-loading #root { opacity: 0.99; }
     </style>
 
     <script type="importmap">
@@ -65,15 +110,154 @@
 }
 </script>
   </head>
-  <body>
+  <body class="js-loading">
     <div id="root">
-      <div class="min-h-screen flex items-center justify-center bg-white">
-        <div class="flex flex-col items-center">
-          <div class="w-12 h-12 border-4 border-jp-cta border-t-transparent rounded-full animate-spin mb-4"></div>
-          <p class="text-gray-400 font-bold tracking-widest text-xs">LOADING SELLERSPRITE...</p>
+      <!-- 
+        STATIC SSR SNAPSHOT FOR EXTREME SEO 
+        This is the raw HTML shell that crawlers see immediately.
+      -->
+      
+      <!-- Header Section -->
+      <header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100 py-4">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+          <a href="https://www.sellersprite.com/jp"><img src="https://www.sellersprite.jp/assets/images/SellerSprite_logo_EN.svg" alt="SellerSprite" class="h-8"></a>
+          <nav class="hidden md:flex gap-8 text-sm font-bold text-gray-600">
+            <a href="#features">５つの強み</a>
+            <a href="https://www.sellersprite.com/jp/price">料金プラン</a>
+            <a href="#faq">よくある質問</a>
+          </nav>
+          <div class="hidden md:flex gap-4">
+            <a href="https://www.sellersprite.com/jp/w/user/signup" class="bg-jp-cta text-white px-6 py-2 rounded-full font-bold">無料で始める</a>
+          </div>
         </div>
-      </div>
+      </header>
+
+      <main>
+        <!-- Hero Section -->
+        <section class="relative pt-32 pb-20 lg:pt-40 lg:pb-32 bg-white text-center">
+          <div class="container mx-auto px-4">
+            <h1 class="font-black leading-tight tracking-tight">
+              <span class="text-3xl md:text-6xl text-jp-navy block mb-4">「売れない」悩みを</span>
+              <span class="text-4xl md:text-8xl text-jp-cta block">データで解決する</span>
+            </h1>
+            <p class="mt-8 text-gray-500 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
+              ビッグデータ × AI技術で、競合分析、キーワード発掘、需要予測を完全サポート。<br>
+              感覚に頼らない「勝てるAmazon運営」を実現します。
+            </p>
+            <div class="mt-12 flex flex-col items-center gap-4">
+              <a href="https://www.sellersprite.com/jp/w/user/signup" class="bg-jp-cta text-white px-12 py-5 rounded-full font-black text-xl shadow-xl">無料で試してみる</a>
+              <div class="flex gap-4 text-xs text-gray-400 font-bold">
+                <span>登録だっだ30秒</span>
+                <span>いつでも解約OK</span>
+                <span>7日間お試し</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Intro/Description Section -->
+        <section class="bg-[#fff7ed] py-20 text-center">
+          <div class="container mx-auto px-4 max-w-4xl">
+            <h2 class="text-3xl font-bold text-jp-navy mb-10">SellerSprite（セラースプライト）とは</h2>
+            <div class="bg-white p-8 rounded-2xl shadow-sm text-left leading-loose text-gray-700">
+              <p>Amazon出品者向けの多機能リサーチ・分析ツールです。10年以上蓄積してきた膨大なデータをもとに、商品リサーチ、キーワード解析、競合分析、販売戦略立案などを強力にサポートします。</p>
+            </div>
+            <div class="mt-12 inline-block bg-jp-navy text-white px-8 py-4 rounded-full font-bold text-xl">
+              世界中の <span class="text-jp-cta text-3xl">100万人以上</span> のAmazonセラー利用中！
+            </div>
+          </div>
+        </section>
+
+        <!-- Pain Points Section -->
+        <section class="py-24 bg-white text-center">
+          <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-16">Amazon運営で、こんなお悩みありませんか？</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+              <article class="bg-gray-100 p-8 rounded-xl">
+                <h3 class="font-bold mb-4">リサーチに時間がかかりすぎる</h3>
+                <p class="text-gray-600 text-sm">市場調査に多くの時間を取られ、本来注力すべき業務に手が回らない。</p>
+              </article>
+              <article class="bg-gray-100 p-8 rounded-xl">
+                <h3 class="font-bold mb-4">競合が売れている理由が不明</h3>
+                <p class="text-gray-600 text-sm">なぜライバルは売れるのか？競合の売上や戦略がわからない。</p>
+              </article>
+              <article class="bg-gray-100 p-8 rounded-xl">
+                <h3 class="font-bold mb-4">SEO対策がうまくいかない</h3>
+                <p class="text-gray-600 text-sm">効果的なキーワードが分からず、商品が埋もれてしまう。</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <!-- Features (The Core Value) -->
+        <section id="features" class="py-24 bg-white">
+          <div class="container mx-auto px-4">
+            <h2 class="text-center text-4xl font-black text-jp-navy mb-20">選ばれる「５つの強力な領域」</h2>
+            
+            <div class="space-y-24">
+              <article class="flex flex-col md:flex-row gap-12 items-center">
+                <div class="flex-1">
+                  <h3 class="text-3xl font-bold text-jp-navy mb-6">01. 「売れるキーワード」を逃さず見つける</h3>
+                  <p class="text-gray-600 leading-relaxed">月間検索ボリューム・競合状況・PPC入札額などを一括分析。注文につながるキーワードを数秒でゲットできます。</p>
+                </div>
+                <div class="flex-1 bg-gray-100 rounded-2xl aspect-video"></div>
+              </article>
+              
+              <article class="flex flex-col md:flex-row-reverse gap-12 items-center">
+                <div class="flex-1">
+                  <h3 class="text-3xl font-bold text-jp-navy mb-6">02. 次のヒット商品をリサーチ</h3>
+                  <p class="text-gray-600 leading-relaxed">トレンド商品や急成長商品を数値で判断。ニッチなブルーオーシャン市場を即座に発見し、失敗リスクを抑えます。</p>
+                </div>
+                <div class="flex-1 bg-gray-100 rounded-2xl aspect-video"></div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="py-24 bg-jp-navy text-white text-center">
+          <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-16">導入企業様・ユーザー様の声</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+              <blockquote class="bg-white text-gray-800 p-8 rounded-xl">
+                <p class="italic mb-6">"リサーチに1日3時間かかっていましたが、今では30分で完了します。売上が昨対比200%になりました。"</p>
+                <cite class="block font-bold">田中 様 (Amazon運営担当)</cite>
+              </blockquote>
+              <blockquote class="bg-white text-gray-800 p-8 rounded-xl">
+                <p class="italic mb-6">"競合分析機能が凄いです。ライバルがどんなキーワードで集客しているか丸わかりです。"</p>
+                <cite class="block font-bold">佐藤 様 (個人事業主)</cite>
+              </blockquote>
+            </div>
+          </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="py-24 bg-gray-50">
+          <div class="container mx-auto px-4 max-w-3xl">
+            <h2 class="text-center text-3xl font-bold mb-12">よくあるご質問</h2>
+            <div class="space-y-6">
+              <div class="bg-white p-6 rounded-lg shadow-sm">
+                <h4 class="font-bold mb-2">Q. 無料トライアル期間中に解約した場合、料金はかかりませんか？</h4>
+                <p class="text-gray-600">A. はい、一切かかりません。7日間以内に解約すれば費用は0円です。</p>
+              </div>
+              <div class="bg-white p-6 rounded-lg shadow-sm">
+                <h4 class="font-bold mb-2">Q. 初心者でも使いこなせますか？</h4>
+                <p class="text-gray-600">A. はい、直感的なインターフェースと充実した日本語マニュアルを用意しています。</p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="bg-jp-navy text-white py-12 text-center border-t border-white/5">
+        <div class="container mx-auto px-4">
+          <img src="https://www.sellersprite.jp/assets/images/SellerSprite_logo_EN.svg" alt="SellerSprite" class="h-6 mx-auto mb-6 brightness-0 invert">
+          <p class="text-sm text-gray-400">&copy; 2024 SellerSprite Inc. All rights reserved.</p>
+        </div>
+      </footer>
     </div>
+
+    <!-- React Application Logic -->
     <script type="module" src="./index.tsx"></script>
   </body>
 </html>

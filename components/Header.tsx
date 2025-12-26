@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { Menu, X, LogIn } from 'lucide-react';
 
@@ -34,9 +35,11 @@ const Header: React.FC<HeaderProps> = ({ onLogoClick }) => {
       }`}
     >
       <div className="container mx-auto px-4 flex justify-between items-center">
-        {/* SellerSprite Official Logo */}
+        {/* SellerSprite Official Logo - Updated to open in new tab */}
         <a 
           href="https://www.sellersprite.com/jp"
+          target="_blank"
+          rel="noopener noreferrer"
           className="flex items-center transition-opacity hover:opacity-80"
         >
           <img 
