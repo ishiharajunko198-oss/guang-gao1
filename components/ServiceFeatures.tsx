@@ -141,7 +141,7 @@ const ServiceFeatures: React.FC = () => {
       icon: BarChart3,
       images: [
         "https://o.sellersprite.com/docs/202512/sellersprite-2025122301024535802.jpg",
-        "https://o.sellersprite.com/docs/202512/sellersprite-2025122301024642132.jpg"
+        "https://o.sellersprite.com/docs/202512/sellersprite-2025122601165048940.png"
       ],
       color: "bg-amber-50 text-amber-600",
       accentBorder: "border-amber-100",
@@ -154,7 +154,7 @@ const ServiceFeatures: React.FC = () => {
       desc: "竞合の売上データから広告の打ち方まで、丸裸にします。後発からでも勝てるポイントを見つけ出し、効率的な差別化を実現します。",
       icon: Users,
       images: [
-        "https://o.sellersprite.com/docs/202512/sellersprite-2025122301024542448.jpg",
+        "	https://o.sellersprite.com/docs/202512/sellersprite-2025122601164712213.png",
         "https://o.sellersprite.com/docs/202512/sellersprite-2025122301024551066.jpg"
       ],
       color: "bg-orange-50 text-[#ff9900]",

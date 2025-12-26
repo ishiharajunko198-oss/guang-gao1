@@ -64,7 +64,7 @@ const ExtensionClickView: React.FC = () => {
             <div className={`absolute inset-0 top-14 transition-opacity duration-500 ease-in-out ${activeTab === 'search' ? 'opacity-100 z-10' : 'opacity-0 z-0'}`}>
               <div className="w-full h-full overflow-y-auto bg-gray-50">
                  <img 
-                  src="https://o.sellersprite.com/docs/202512/sellersprite-2025122305295498034.jpg" 
+                  src="https://o.sellersprite.com/docs/202512/sellersprite-2025122601171164779.png" 
                   alt="Amazon検索結果画面におけるSellerSprite拡張機能の分析オーバーレイ表示例" 
                   className="w-full h-auto object-cover opacity-90" 
                   loading="lazy"
@@ -86,7 +86,7 @@ const ExtensionClickView: React.FC = () => {
             <div className={`absolute inset-0 top-14 transition-opacity duration-500 ease-in-out ${activeTab === 'detail' ? 'opacity-100 z-10' : 'opacity-0 z-0'}`}>
               <div className="w-full h-full overflow-y-auto bg-white">
                  <img 
-                  src="https://o.sellersprite.com/docs/202512/sellersprite-2025122305293435299.jpg" 
+                  src="https://o.sellersprite.com/docs/202512/sellersprite-2025122601165163847.png" 
                   alt="Amazon商品詳細ページでの価格推移と在庫状況の分析グラフ表示" 
                   className="w-full h-auto object-cover opacity-90" 
                   loading="lazy"
