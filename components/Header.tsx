@@ -18,10 +18,10 @@ const Header: React.FC<HeaderProps> = ({ onLogoClick }) => {
   }, []);
 
   const navLinks = [
-    { name: '５つの領域', href: '#reasons' },
-    { name: '機能一覧', href: '#features' },
+    { name: '５つの強み', href: '#features' },
+    { name: '機能一覧', href: 'https://www.sellersprite.com/jp/' },
     { name: 'お客様の声', href: '#testimonials' },
-    { name: '料金プラン', href: '#pricing' },
+    { name: '料金プラン', href: 'https://www.sellersprite.com/jp/price' },
     { name: 'Q&A', href: '#faq' },
   ];
 
@@ -35,8 +35,8 @@ const Header: React.FC<HeaderProps> = ({ onLogoClick }) => {
     >
       <div className="container mx-auto px-4 flex justify-between items-center">
         {/* SellerSprite Official Logo */}
-        <button 
-          onClick={onLogoClick}
+        <a 
+          href="https://www.sellersprite.com/jp"
           className="flex items-center transition-opacity hover:opacity-80"
         >
           <img 
@@ -46,7 +46,7 @@ const Header: React.FC<HeaderProps> = ({ onLogoClick }) => {
             width="180"
             height="40"
           />
-        </button>
+        </a>
 
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-8">
@@ -64,14 +64,14 @@ const Header: React.FC<HeaderProps> = ({ onLogoClick }) => {
         {/* CTA & Login */}
         <div className="hidden md:flex items-center gap-4">
            <a 
-            href="#login" 
+            href="https://www.sellersprite.com/jp/w/user/login" 
             className="flex items-center gap-1 text-gray-600 font-bold hover:text-[#ff9900] transition-colors"
           >
             <LogIn size={18} />
             ログイン
           </a>
           <a 
-            href="#register" 
+            href="https://www.sellersprite.com/jp/w/user/signup" 
             className="bg-[#ff9900] hover:bg-[#e68a00] text-white px-6 py-2.5 rounded-full font-bold shadow-lg transition-transform transform hover:-translate-y-0.5"
           >
             無料で始める
@@ -98,7 +98,6 @@ const Header: React.FC<HeaderProps> = ({ onLogoClick }) => {
               className="text-gray-700 font-medium py-2 border-b border-gray-50"
               onClick={() => {
                 setMobileMenuOpen(false);
-                if (onLogoClick) onLogoClick();
               }}
             >
               {link.name}
@@ -106,13 +105,13 @@ const Header: React.FC<HeaderProps> = ({ onLogoClick }) => {
           ))}
           <div className="flex flex-col gap-3 mt-2">
             <a 
-              href="#login" 
+              href="https://www.sellersprite.com/jp/w/user/login" 
               className="text-center py-2 text-gray-700 font-bold border border-gray-300 rounded"
             >
               ログイン
             </a>
              <a 
-              href="#register" 
+              href="https://www.sellersprite.com/jp/w/user/signup" 
               className="text-center py-3 bg-[#ff9900] text-white font-bold rounded shadow"
             >
               今すぐ無料で試す

@@ -104,6 +104,11 @@ const ExtensionClickView: React.FC = () => {
               </div>
             </div>
           </div>
+          
+          {/* Disclaimer Text */}
+          <p className="mt-6 text-center text-gray-400 text-[10px] md:text-xs font-medium leading-relaxed">
+            ※一部の商品情報を保護するためグレーで隠しています。画像は拡張機能インストール後の表示イメージです。実際の画面には、商品画像やタイトルなど表示されています。
+          </p>
         </div>
       </div>
     </section>

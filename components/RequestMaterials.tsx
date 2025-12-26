@@ -1,6 +1,8 @@
 import React, { useState, useRef } from 'react';
 import { CheckCircle2, ChevronRight, Loader2, Send, Download, FileText, AlertCircle, ShieldCheck, Lock } from 'lucide-react';
 
+const PRIVACY_POLICY_URL = "https://www.sellersprite.com/jp/v3/knowledge/feature/privacy-policy";
+
 const RequestMaterials: React.FC = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
@@ -15,30 +17,45 @@ const RequestMaterials: React.FC = () => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
-    const email = formData.get('email') as string;
+    
     const name = formData.get('name') as string;
+    const kana = formData.get('kana') as string;
     const company = formData.get('company') as string;
+    const dept = formData.get('dept') as string;
+    const email = formData.get('email') as string;
+    const tel = formData.get('tel') as string;
     const agreed = formData.get('agreed') === 'on';
 
     const newErrors: Record<string, string> = {};
-    if (!name) newErrors.name = "氏名を入力してください";
-    if (!company) newErrors.company = "会社名を入力してください";
-    if (!email) {
+    if (!name.trim()) newErrors.name = "氏名を入力してください";
+    if (!kana.trim()) newErrors.kana = "フリガナを入力してください";
+    if (!company.trim()) newErrors.company = "会社名を入力してください";
+    if (!dept.trim()) newErrors.dept = "部署名を入力してください";
+    if (!tel.trim()) newErrors.tel = "電話番号を入力してください";
+    
+    if (!email.trim()) {
       newErrors.email = "メールアドレスを入力してください";
     } else if (!validateEmail(email)) {
       newErrors.email = "正しいメールアドレスを入力してください";
     }
-    if (!agreed) newErrors.agreed = "同意が必要です";
+    
+    if (!agreed) newErrors.agreed = "プライバシーポリシーへの同意が必要です";
 
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);
+      // 最初のエラー項目までスクロール
+      const firstErrorKey = Object.keys(newErrors)[0];
+      const element = document.getElementsByName(firstErrorKey)[0];
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
       return;
     }
 
     setErrors({});
     setIsSubmitting(true);
 
-    // 模擬API送信
+    // 送信シミュレーション
     setTimeout(() => {
       setIsSubmitting(false);
       setIsSuccess(true);
@@ -46,9 +63,18 @@ const RequestMaterials: React.FC = () => {
     }, 1500);
   };
 
+  const interestOptions = [
+    "料金プランのお見積りがほしい",
+    "サービスの詳細を知りたい",
+    "お打ち合わせを希望する",
+    "無料トライアルを試したい",
+    "デモの実演を見たい",
+    "その他（自由記入欄）"
+  ];
+
   if (isSuccess) {
     return (
-      <div className="pt-40 pb-32 min-h-screen bg-[#f8fafc] flex items-center justify-center px-4">
+      <div className="pt-40 pb-32 min-h-screen bg-[#f8fafc] flex items-center justify-center px-4 font-['Noto_Sans_JP']">
         <div className="max-w-2xl w-full bg-white rounded-3xl shadow-2xl p-12 text-center border border-gray-100 animate-in zoom-in-95 duration-500">
           <div className="w-20 h-20 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-8">
             <CheckCircle2 size={48} />
@@ -56,7 +82,7 @@ const RequestMaterials: React.FC = () => {
           <h2 className="text-3xl font-black text-jp-navy mb-4">送信が完了しました</h2>
           <p className="text-gray-500 mb-10 leading-relaxed">
             ご入力いただき、誠にありがとうございます。資料の準備が整いました。<br />
-            通常1営業日以内に、担当者よりご連絡させていただきます。
+            ご質問やご要望に対して、通常1営業日以内に担当者よりご連絡させていただきます。
           </p>
           <div className="p-8 bg-slate-50 rounded-2xl flex flex-col items-center border border-gray-100 mb-8">
              <FileText size={48} className="text-[#ff9900] mb-4" />
@@ -70,8 +96,8 @@ const RequestMaterials: React.FC = () => {
                 資料をダウンロードする
              </a>
           </div>
-          <button onClick={() => window.close()} className="text-gray-400 font-bold hover:text-jp-navy underline text-sm transition-colors">
-            このタブを閉じる
+          <button onClick={() => window.location.hash = ''} className="text-gray-400 font-bold hover:text-jp-navy underline text-sm transition-colors">
+            トップページに戻る
           </button>
         </div>
       </div>
@@ -79,11 +105,11 @@ const RequestMaterials: React.FC = () => {
   }
 
   return (
-    <div className="pt-24 lg:pt-32 pb-20 bg-[#f8fafc] min-h-screen">
+    <div className="pt-24 lg:pt-32 pb-20 bg-[#f8fafc] min-h-screen font-['Noto_Sans_JP']">
       <div className="container mx-auto px-4 max-w-6xl">
         <div className="bg-white shadow-[0_40px_100px_rgba(15,44,76,0.08)] rounded-[2rem] overflow-hidden flex flex-col lg:flex-row border border-gray-100">
           
-          {/* 左側: 資料内容概要 (1/3) */}
+          {/* 左側: 資料内容概要 */}
           <aside className="lg:w-1/3 bg-[#f1f5f9] p-8 lg:p-12 border-r border-gray-200">
             <h2 className="text-xl font-black text-jp-navy mb-8 flex items-center gap-2">
               <span className="w-1.5 h-6 bg-jp-cta rounded-full"></span>
@@ -103,14 +129,11 @@ const RequestMaterials: React.FC = () => {
               </h3>
               <ul className="space-y-4 text-gray-600 text-[13px] font-medium">
                 {[
-                  "01 私たちについて", 
-                  "02 サービス概要", 
-                  "03 コア機能と強み", 
-                  "04 活用シーン", 
-                  "05 セミナー開催",
-                  "06 初心者向け",
-                  "07 Vision & Mission",
-                  "08 お問い合わせ"
+                  "・開発会社について", 
+                  "・セラースプライトとは", 
+                  "・セラースプライトで解決できる課題", 
+                  "・コア機能及び活用方法", 
+                  "・セミナー開催など",
                 ].map((text, i) => (
                   <li key={i} className="flex items-start gap-2">
                     <span className="text-jp-cta mt-0.5">•</span>
@@ -125,20 +148,20 @@ const RequestMaterials: React.FC = () => {
               <p>※弊社担当より製品説明会や勉強会などのご案内の連絡をさせていただくことがあります。</p>
               <p>
                 ※ご記入いただいた情報につきましては、弊社からのご連絡の目的以外に利用することはありません。
-                <a href="#" className="text-jp-blue hover:underline font-bold ml-1">【プライバシーポリシー】</a>
+                <a href={PRIVACY_POLICY_URL} target="_blank" rel="noopener noreferrer" className="text-jp-blue hover:underline font-bold ml-1">【プライバシーポリシー】</a>
               </p>
               <p className="bg-white/50 p-4 rounded-xl border border-gray-200 flex items-start gap-3">
                 <ShieldCheck size={18} className="text-gray-400 shrink-0" />
                 <span>
                   このサイトはGoogle reCAPTCHAによって保護されています。 
-                  <a href="#" className="text-jp-blue hover:underline ml-1">プライバシーポリシー</a> ・ 
+                  <a href={PRIVACY_POLICY_URL} target="_blank" rel="noopener noreferrer" className="text-jp-blue hover:underline ml-1">プライバシーポリシー</a> ・ 
                   <a href="#" className="text-jp-blue hover:underline">利用規約</a>
                 </span>
               </p>
             </div>
           </aside>
 
-          {/* 右側: 表单 (2/3) */}
+          {/* 右側: フォーム */}
           <main className="lg:w-2/3 p-8 lg:p-16">
             <div className="mb-10 text-center lg:text-left">
               <h1 className="text-2xl font-black text-jp-navy mb-2">お問い合わせ・資料請求</h1>
@@ -153,15 +176,26 @@ const RequestMaterials: React.FC = () => {
                     <label className="text-[13px] font-black text-jp-navy">氏名</label>
                     <span className="bg-red-500 text-white text-[10px] px-1.5 py-0.5 rounded font-bold">必須</span>
                   </div>
-                  <input name="name" type="text" placeholder="例：田中 太郎" className={`w-full px-5 py-4 bg-gray-50 border rounded-xl outline-none transition-all text-sm ${errors.name ? 'border-red-400 ring-2 ring-red-50' : 'border-gray-200 focus:border-jp-cta focus:bg-white'}`} />
-                  {errors.name && <p className="text-red-500 text-[11px] flex items-center gap-1"><AlertCircle size={12} /> {errors.name}</p>}
+                  <input 
+                    name="name" 
+                    type="text" 
+                    placeholder="例：田中 太郎" 
+                    className={`w-full px-5 py-4 bg-gray-50 border rounded-xl outline-none transition-all text-sm placeholder:text-[10px] xs:placeholder:text-[11px] sm:placeholder:text-sm ${errors.name ? 'border-red-400 ring-2 ring-red-50' : 'border-gray-200 focus:border-jp-cta focus:bg-white'}`} 
+                  />
+                  {errors.name && <p className="text-red-500 text-[11px] flex items-center gap-1 font-bold animate-pulse"><AlertCircle size={12} /> {errors.name}</p>}
                 </div>
                 <div className="space-y-2">
                   <div className="flex items-center gap-2">
                     <label className="text-[13px] font-black text-jp-navy">フリガナ</label>
-                    <span className="bg-gray-400 text-white text-[10px] px-1.5 py-0.5 rounded font-bold">任意</span>
+                    <span className="bg-red-500 text-white text-[10px] px-1.5 py-0.5 rounded font-bold">必須</span>
                   </div>
-                  <input name="kana" type="text" placeholder="例：タナカ タロウ" className="w-full px-5 py-4 bg-gray-50 border border-gray-200 rounded-xl focus:border-jp-cta focus:bg-white outline-none transition-all text-sm" />
+                  <input 
+                    name="kana" 
+                    type="text" 
+                    placeholder="例：タナカ タロウ" 
+                    className={`w-full px-5 py-4 bg-gray-50 border rounded-xl outline-none transition-all text-sm placeholder:text-[10px] xs:placeholder:text-[11px] sm:placeholder:text-sm ${errors.kana ? 'border-red-400 ring-2 ring-red-50' : 'border-gray-200 focus:border-jp-cta focus:bg-white'}`} 
+                  />
+                  {errors.kana && <p className="text-red-500 text-[11px] flex items-center gap-1 font-bold animate-pulse"><AlertCircle size={12} /> {errors.kana}</p>}
                 </div>
               </div>
 
@@ -172,14 +206,26 @@ const RequestMaterials: React.FC = () => {
                     <label className="text-[13px] font-black text-jp-navy">会社名</label>
                     <span className="bg-red-500 text-white text-[10px] px-1.5 py-0.5 rounded font-bold">必須</span>
                   </div>
-                  <input name="company" type="text" placeholder="例：株式会社〇〇" className={`w-full px-5 py-4 bg-gray-50 border rounded-xl outline-none transition-all text-sm ${errors.company ? 'border-red-400' : 'border-gray-200 focus:border-jp-cta focus:bg-white'}`} />
+                  <input 
+                    name="company" 
+                    type="text" 
+                    placeholder="例：株式会社SellerSprite" 
+                    className={`w-full px-5 py-4 bg-gray-50 border rounded-xl outline-none transition-all text-sm placeholder:text-[10px] xs:placeholder:text-[11px] sm:placeholder:text-sm ${errors.company ? 'border-red-400 ring-2 ring-red-50' : 'border-gray-200 focus:border-jp-cta focus:bg-white'}`} 
+                  />
+                  {errors.company && <p className="text-red-500 text-[11px] flex items-center gap-1 font-bold animate-pulse"><AlertCircle size={12} /> {errors.company}</p>}
                 </div>
                 <div className="space-y-2">
                   <div className="flex items-center gap-2">
                     <label className="text-[13px] font-black text-jp-navy">部署名</label>
-                    <span className="bg-gray-400 text-white text-[10px] px-1.5 py-0.5 rounded font-bold">任意</span>
+                    <span className="bg-red-500 text-white text-[10px] px-1.5 py-0.5 rounded font-bold">必須</span>
                   </div>
-                  <input name="dept" type="text" placeholder="例：部署がない場合は「なし」とご入力ください。）" className="w-full px-5 py-4 bg-gray-50 border border-gray-200 rounded-xl focus:border-jp-cta focus:bg-white outline-none transition-all text-sm" />
+                  <input 
+                    name="dept" 
+                    type="text" 
+                    placeholder="例：EC事業部（なしの場合は「なし」）" 
+                    className={`w-full px-5 py-4 bg-gray-50 border rounded-xl outline-none transition-all text-sm placeholder:text-[10px] xs:placeholder:text-[11px] sm:placeholder:text-sm ${errors.dept ? 'border-red-400 ring-2 ring-red-50' : 'border-gray-200 focus:border-jp-cta focus:bg-white'}`} 
+                  />
+                  {errors.dept && <p className="text-red-500 text-[11px] flex items-center gap-1 font-bold animate-pulse"><AlertCircle size={12} /> {errors.dept}</p>}
                 </div>
               </div>
 
@@ -190,32 +236,55 @@ const RequestMaterials: React.FC = () => {
                     <label className="text-[13px] font-black text-jp-navy">メールアドレス</label>
                     <span className="bg-red-500 text-white text-[10px] px-1.5 py-0.5 rounded font-bold">必須</span>
                   </div>
-                  <input name="email" type="email" placeholder="例：sellersprite@sellersprite.com" className={`w-full px-5 py-4 bg-gray-50 border rounded-xl outline-none transition-all text-sm ${errors.email ? 'border-red-400 ring-2 ring-red-50' : 'border-gray-200 focus:border-jp-cta focus:bg-white'}`} />
+                  <input 
+                    name="email" 
+                    type="email" 
+                    placeholder="例：sellersprite@example.com" 
+                    className={`w-full px-5 py-4 bg-gray-50 border rounded-xl outline-none transition-all text-sm placeholder:text-[10px] xs:placeholder:text-[11px] sm:placeholder:text-sm ${errors.email ? 'border-red-400 ring-2 ring-red-50' : 'border-gray-200 focus:border-jp-cta focus:bg-white'}`} 
+                  />
+                  {errors.email && <p className="text-red-500 text-[11px] flex items-center gap-1 font-bold animate-pulse"><AlertCircle size={12} /> {errors.email}</p>}
                 </div>
                 <div className="space-y-2">
                   <div className="flex items-center gap-2">
-                    <label className="text-[13px] font-black text-jp-navy">电话番号</label>
-                    <span className="bg-gray-400 text-white text-[10px] px-1.5 py-0.5 rounded font-bold">任意</span>
+                    <label className="text-[13px] font-black text-jp-navy">電話番号</label>
+                    <span className="bg-red-500 text-white text-[10px] px-1.5 py-0.5 rounded font-bold">必須</span>
                   </div>
-                  <input name="tel" type="tel" placeholder="例：000-0000-0000" className="w-full px-5 py-4 bg-gray-50 border border-gray-200 rounded-xl focus:border-jp-cta focus:bg-white outline-none transition-all text-sm" />
+                  <input 
+                    name="tel" 
+                    type="tel" 
+                    placeholder="例：03-1234-5678" 
+                    className={`w-full px-5 py-4 bg-gray-50 border rounded-xl outline-none transition-all text-sm placeholder:text-[10px] xs:placeholder:text-[11px] sm:placeholder:text-sm ${errors.tel ? 'border-red-400 ring-2 ring-red-50' : 'border-gray-200 focus:border-jp-cta focus:bg-white'}`} 
+                  />
+                  {errors.tel && <p className="text-red-500 text-[11px] flex items-center gap-1 font-bold animate-pulse"><AlertCircle size={12} /> {errors.tel}</p>}
                 </div>
               </div>
 
-              {/* 自由記入欄 */}
-              <div className="space-y-2">
-                <label className="block text-[13px] font-black text-jp-navy">資料請求以外、興味・関心のあるサービス及び内容</label>
-                <textarea name="interest" rows={2} placeholder="自由にご記入ください" className="w-full px-5 py-4 bg-gray-50 border border-gray-200 rounded-xl focus:border-jp-cta focus:bg-white outline-none transition-all text-sm resize-none"></textarea>
-              </div>
-
-              <div className="space-y-2">
-                <label className="block text-[13px] font-black text-jp-navy">ご要望やご質問</label>
-                <textarea name="message" rows={3} placeholder="例：自社課題、無料トライアル、機能詳細など" className="w-full px-5 py-4 bg-gray-50 border border-gray-200 rounded-xl focus:border-jp-cta focus:bg-white outline-none transition-all text-sm resize-none"></textarea>
+              {/* 興味・関心のあるサービス (Checkboxes) */}
+              <div className="space-y-4">
+                <label className="block text-[13px] font-black text-jp-navy">資料請求以外、興味・関心のあるサービス（任意）</label>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  {interestOptions.map((option, idx) => (
+                    <label key={idx} className="flex items-center gap-3 p-3 bg-gray-50 border border-gray-100 rounded-xl cursor-pointer hover:bg-orange-50 transition-colors group">
+                      <input type="checkbox" name="interests" value={option} className="w-4 h-4 accent-jp-cta rounded border-gray-300" />
+                      <span className="text-[12px] sm:text-[13px] text-gray-700 font-medium group-hover:text-jp-navy">{option}</span>
+                    </label>
+                  ))}
+                </div>
+                <div className="mt-4">
+                  <label className="block text-[12px] text-gray-500 mb-2">その他（自由記入欄）</label>
+                  <textarea 
+                    name="message" 
+                    rows={3} 
+                    placeholder="具体的なご要望やご質問があればこちらにご記入ください（小規模なデモ希望など）" 
+                    className="w-full px-5 py-4 bg-gray-50 border border-gray-200 rounded-xl focus:border-jp-cta focus:bg-white outline-none transition-all text-sm resize-none placeholder:text-[10px] xs:placeholder:text-[11px] sm:placeholder:text-sm"
+                  ></textarea>
+                </div>
               </div>
 
               {/* 同意事項 */}
               <div className="bg-[#fffbf2] p-6 rounded-2xl border border-[#ffecb3]">
                 <p className="text-[11px] text-gray-500 mb-4 leading-relaxed">
-                   ご提供いただいた情報は当社のプライバシーポリシーに基づき適切に管理いたします。内容をご確認いただき、同意される方のみ送信ボタンを押してください。
+                   ご提供いただいた情報は当社の<a href={PRIVACY_POLICY_URL} target="_blank" rel="noopener noreferrer" className="text-jp-blue underline font-bold">プライバシーポリシー</a>に基づき適切に管理いたします。内容をご確認いただき、同意される方のみ送信ボタンを押してください。
                 </p>
                 <label className="flex items-center gap-3 cursor-pointer group">
                   <div className="relative">
@@ -227,7 +296,7 @@ const RequestMaterials: React.FC = () => {
                     個人情報の取扱いに同意します <span className="text-red-500 font-bold">*</span>
                   </span>
                 </label>
-                {errors.agreed && <p className="text-red-500 text-[11px] mt-2 font-bold">{errors.agreed}</p>}
+                {errors.agreed && <p className="text-red-500 text-[11px] mt-2 font-bold animate-pulse">{errors.agreed}</p>}
               </div>
 
               {/* 送信ボタン */}
@@ -235,7 +304,7 @@ const RequestMaterials: React.FC = () => {
                 <button 
                   disabled={isSubmitting}
                   type="submit" 
-                  className="w-full md:w-[360px] bg-jp-cta hover:bg-jp-ctaHover text-white font-black py-5 rounded-full shadow-xl shadow-orange-500/20 transform hover:-translate-y-1 transition-all flex items-center justify-center gap-3 disabled:opacity-70 disabled:hover:translate-y-0"
+                  className="w-full md:w-[360px] bg-jp-cta hover:bg-jp-ctaHover text-white font-black py-5 rounded-full shadow-xl shadow-orange-500/20 transform hover:-translate-y-1 transition-all flex items-center justify-center gap-3 disabled:opacity-70 disabled:hover:translate-y-0 active:scale-95"
                 >
                   {isSubmitting ? <Loader2 className="animate-spin" /> : <Send size={20} />}
                   <span className="text-xl">送 信</span>

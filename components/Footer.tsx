@@ -1,6 +1,8 @@
 import React from 'react';
 
 const Footer: React.FC = () => {
+  const PRIVACY_POLICY_URL = "https://www.sellersprite.com/jp/v3/knowledge/feature/privacy-policy";
+
   return (
     <footer className="bg-jp-navy text-white pt-16 pb-24 md:pb-8">
       <div className="container mx-auto px-4">
@@ -16,27 +18,26 @@ const Footer: React.FC = () => {
             </div>
             <p className="text-gray-400 text-sm leading-relaxed max-w-sm">
               Amazon出品者のためのオールインワン分析ツール。<br/>
-              データに基づいた意思決定で、あなたのECビジネスを次のステージへ。
+              データに基づいた意思決定で、あなたのECビジネスを次のステージへ.
             </p>
           </div>
           
           <div>
             <h4 className="font-bold mb-4 border-b border-gray-600 pb-2 inline-block">サービス</h4>
             <ul className="space-y-2 text-sm text-gray-400">
-              <li><a href="#features" className="hover:text-white transition-colors">機能一覧</a></li>
-              <li><a href="#pricing" className="hover:text-white transition-colors">料金プラン</a></li>
-              <li><a href="#testimonials" className="hover:text-white transition-colors">導入事例</a></li>
-              <li><a href="#faq" className="hover:text-white transition-colors">よくある質問</a></li>
+              <li><a href="https://www.sellersprite.com/jp" className="hover:text-white transition-colors">ホームページ</a></li>
+              <li><a href="https://www.sellersprite.com/jp/price" className="hover:text-white transition-colors">料金プラン</a></li>
+              <li><a href="https://www.sellersprite.com/jp/v3/knowledge/feature/home" className="hover:text-white transition-colors">知識ペース</a></li>
+              <li><a href="https://www.sellersprite.com/jp/v3/knowledge/experience" className="hover:text-white transition-colors">使用体験談</a></li>
             </ul>
           </div>
 
           <div>
             <h4 className="font-bold mb-4 border-b border-gray-600 pb-2 inline-block">会社情報</h4>
              <ul className="space-y-2 text-sm text-gray-400">
-              <li><a href="#" className="hover:text-white transition-colors">運営会社</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">利用規約</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">プライバシーポリシー</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">特定商取引法に基づく表記</a></li>
+              <li><a href="https://www.sellersprite.com/jp/help/company-profile" className="hover:text-white transition-colors">会社概要</a></li>
+              <li><a href="https://www.sellersprite.com/jp/v3/knowledge/feature/terms" className="hover:text-white transition-colors">利用規約</a></li>
+              <li><a href={PRIVACY_POLICY_URL} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">プライバシーポリシー</a></li>
             </ul>
           </div>
         </div>
