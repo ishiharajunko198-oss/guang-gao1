@@ -8,7 +8,7 @@ const Hero: React.FC = () => {
   };
 
   return (
-    <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-32 overflow-hidden bg-white flex justify-center">
+    <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-32 overflow-hidden bg-white flex justify-center font-['Noto_Sans_JP']">
       <div className="absolute inset-0 bg-gradient-to-br from-[#fffaf5] via-white to-[#fff5e6] -z-20"></div>
       <div className="absolute inset-0 z-0 pointer-events-none opacity-[0.4]" style={{ backgroundImage: 'radial-gradient(#ffd8a8 0.5px, transparent 0.5px)', backgroundSize: '30px 30px' }}></div>
 
@@ -56,15 +56,40 @@ const Hero: React.FC = () => {
               感覚に頼らない「勝てるAmazon運営」を実現します。
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-5 sm:gap-8 justify-center lg:justify-start items-center relative mb-14 w-full">
+            <div className="flex flex-col sm:flex-row gap-5 sm:gap-8 justify-center lg:justify-start items-start relative mb-14 w-full">
               <div className="relative group w-full sm:w-auto">
+                {/* Badge */}
                 <div className="absolute -top-[28px] left-1/2 sm:left-4 -translate-x-1/2 sm:translate-x-0 bg-[#e60012] text-white text-[11px] font-black px-3 py-1 rounded shadow-[0_4px_10px_rgba(230,0,18,0.3)] whitespace-nowrap z-20 animate-bounce">
                   クレジットカード登録不要
                 </div>
-                <a href="#register" className="bg-[#ff9900] hover:bg-[#ff7700] text-white font-black rounded-full shadow-[0_15px_30px_rgba(255,153,0,0.3)] transition-all transform hover:-translate-y-1.5 flex items-center justify-center text-xl w-full sm:w-[280px] h-[72px] relative overflow-hidden group">
-                  <span className="relative z-10 flex items-center gap-2">無料で試してみる <ArrowRight strokeWidth={3} /></span>
-                </a>
+                
+                {/* Button & Trust Points Container */}
+                <div className="flex flex-col items-center lg:items-start">
+                  <a 
+                    href="https://www.sellersprite.com/jp/w/user/signup" 
+                    className="bg-[#ff9900] hover:bg-[#ff7700] text-white font-black rounded-full shadow-[0_15px_30px_rgba(255,153,0,0.3)] transition-all transform hover:-translate-y-1.5 flex items-center justify-center text-xl w-full sm:w-[280px] h-[72px] relative overflow-hidden group"
+                  >
+                    <span className="relative z-10 flex items-center gap-2">7日間無料お試し <ArrowRight strokeWidth={3} /></span>
+                  </a>
+                  
+                  {/* Trust Bullet Points */}
+                  <div className="mt-4 flex items-center justify-center lg:justify-start gap-x-3 sm:gap-x-4 text-[10px] sm:text-[11px] text-gray-400 font-bold whitespace-nowrap w-full">
+                    <span className="flex items-center gap-1.5">
+                      <span className="w-1 h-1 rounded-full bg-gray-300"></span>
+                      登録だっだ30秒
+                    </span>
+                    <span className="flex items-center gap-1.5">
+                      <span className="w-1 h-1 rounded-full bg-gray-300"></span>
+                      いつでも解約OK
+                    </span>
+                    <span className="flex items-center gap-1.5">
+                      <span className="w-1 h-1 rounded-full bg-gray-300"></span>
+                      課金なし
+                    </span>
+                  </div>
+                </div>
               </div>
+
               <button 
                 onClick={handleRequestMaterials}
                 className="bg-transparent hover:bg-gray-50 text-jp-navy border-2 border-jp-navy font-black rounded-full transition-all transform hover:-translate-y-1 flex items-center justify-center gap-2 text-lg w-full sm:w-[240px] h-[72px]"
