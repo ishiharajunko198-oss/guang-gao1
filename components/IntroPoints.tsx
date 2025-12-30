@@ -1,3 +1,4 @@
+
 import React from 'react';
 
 const IntroPoints: React.FC = () => {
@@ -31,14 +32,16 @@ const IntroPoints: React.FC = () => {
           </div>
         </div>
 
-        {/* Trust Badge / Highlight - Dark Blue Pill */}
-        <div className="text-center w-full">
-          <div className="inline-flex items-center justify-center bg-[#0f2c4c] text-white px-10 py-5 rounded-full shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-0.5 max-w-full">
-            <p className="text-lg md:text-xl font-bold tracking-wider flex items-center flex-wrap justify-center gap-x-3 gap-y-1">
-              <span>世界中の</span>
-              <span className="text-[#ff9900] font-black text-3xl md:text-4xl">100万人以上</span>
-              <span>のAmazonセラー利用中！</span>
-            </p>
+        {/* Trust Data - Style updated to match section background and remove "button-like" signals */}
+        <div className="text-center w-full mt-4">
+          <div className="inline-flex items-center justify-center py-4 px-2 max-w-full cursor-default">
+            <div className="text-lg md:text-xl font-bold tracking-wider text-[#0f2c4c] flex items-center flex-wrap justify-center gap-x-4 gap-y-2">
+              <span className="opacity-70">\世界中の</span>
+              <div className="flex items-baseline gap-1 border-b-2 border-[#ff9900]/30 pb-1">
+                <span className="text-[#ff9900] font-black text-4xl md:text-5xl">100万人以上</span>
+              </div>
+              <span className="opacity-70">のAmazonセラー利用中！/</span>
+            </div>
           </div>
         </div>
       </div>

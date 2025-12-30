@@ -19,11 +19,12 @@ const Header: React.FC<HeaderProps> = ({ onLogoClick }) => {
   }, []);
 
   const navLinks = [
-    { name: '５つの強み', href: '#features' },
-    { name: '機能一覧', href: 'https://www.sellersprite.com/jp/' },
+    { name: 'ホームページ', href: 'https://www.sellersprite.com/jp' },
+    { name: '５つの强み', href: '#features' },
+    { name: '拡張機能', href: '#extension-view' },
+    { name: '機能一覧', href: '#feature-table' },
     { name: 'お客様の声', href: '#testimonials' },
     { name: '料金プラン', href: 'https://www.sellersprite.com/jp/price' },
-    { name: 'Q&A', href: '#faq' },
   ];
 
   return (
@@ -52,12 +53,14 @@ const Header: React.FC<HeaderProps> = ({ onLogoClick }) => {
         </a>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className="hidden xl:flex items-center gap-6">
           {navLinks.map((link) => (
             <a 
               key={link.name} 
               href={link.href} 
-              className="text-gray-600 hover:text-[#ff9900] font-medium transition-colors text-sm"
+              target={link.href.startsWith('http') ? '_blank' : undefined}
+              rel={link.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+              className="text-gray-600 hover:text-[#ff9900] font-medium transition-colors text-sm whitespace-nowrap"
             >
               {link.name}
             </a>
@@ -68,14 +71,14 @@ const Header: React.FC<HeaderProps> = ({ onLogoClick }) => {
         <div className="hidden md:flex items-center gap-4">
            <a 
             href="https://www.sellersprite.com/jp/w/user/login" 
-            className="flex items-center gap-1 text-gray-600 font-bold hover:text-[#ff9900] transition-colors"
+            className="flex items-center gap-1 text-gray-600 font-bold hover:text-[#ff9900] transition-colors whitespace-nowrap"
           >
             <LogIn size={18} />
             ログイン
           </a>
           <a 
             href="https://www.sellersprite.com/jp/w/user/signup" 
-            className="bg-[#ff9900] hover:bg-[#e68a00] text-white px-6 py-2.5 rounded-full font-bold shadow-lg transition-transform transform hover:-translate-y-0.5"
+            className="bg-[#ff9900] hover:bg-[#e68a00] text-white px-6 py-2.5 rounded-full font-bold shadow-lg transition-transform transform hover:-translate-y-0.5 whitespace-nowrap"
           >
             無料で始める
           </a>
@@ -83,7 +86,7 @@ const Header: React.FC<HeaderProps> = ({ onLogoClick }) => {
 
         {/* Mobile Menu Toggle */}
         <button 
-          className="md:hidden text-gray-700"
+          className="xl:hidden text-gray-700"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           aria-label={mobileMenuOpen ? "メニューを閉じる" : "メニューを開く"}
         >
@@ -93,14 +96,18 @@ const Header: React.FC<HeaderProps> = ({ onLogoClick }) => {
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-white absolute top-full left-0 right-0 border-b border-gray-100 shadow-xl p-4 flex flex-col gap-4">
+        <div className="xl:hidden bg-white absolute top-full left-0 right-0 border-b border-gray-100 shadow-xl p-4 flex flex-col gap-4">
           {navLinks.map((link) => (
             <a 
               key={link.name} 
               href={link.href} 
+              target={link.href.startsWith('http') ? '_blank' : undefined}
+              rel={link.href.startsWith('http') ? 'noopener noreferrer' : undefined}
               className="text-gray-700 font-medium py-2 border-b border-gray-50"
               onClick={() => {
-                setMobileMenuOpen(false);
+                if (!link.href.startsWith('http')) {
+                  setMobileMenuOpen(false);
+                }
               }}
             >
               {link.name}

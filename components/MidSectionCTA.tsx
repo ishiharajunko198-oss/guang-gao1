@@ -36,13 +36,13 @@ const MidSectionCTA: React.FC = () => {
 
           {/* Center: CTA Text & Button */}
           <div className="flex-1 text-center px-2 sm:px-4 flex flex-col items-center min-w-0">
-             <h3 className="text-white text-[13px] xs:text-[16px] sm:text-[20px] md:text-2xl font-bold mb-8 tracking-wide drop-shadow-md flex items-center justify-center flex-wrap leading-relaxed">
+             <div className="text-white text-[13px] xs:text-[16px] sm:text-[20px] md:text-2xl font-bold mb-8 tracking-wide drop-shadow-md flex items-center justify-center flex-wrap leading-relaxed">
                <span className="font-light opacity-50 text-xl sm:text-2xl md:text-3xl mr-1 sm:mr-3 flex-shrink-0 hidden xs:inline">\</span>
                <span className="px-1 whitespace-normal md:whitespace-nowrap text-center max-w-full">
                  SellerSpriteで機能・画面を確認！
                </span>
-               <span className="font-light opacity-50 text-xl sm:text-2xl md:text-3xl ml-1 sm:ml-3 flex-shrink-0 hidden xs:inline">/</span>
-             </h3>
+               <span className="font-light opacity-50 text-xl sm:text-2xl md:text-3xl ml-1 sm:mr-3 flex-shrink-0 hidden xs:inline">/</span>
+             </div>
              <a 
                href="#register"
                className="inline-block bg-[#ffc600] hover:bg-[#e6b200] text-[#0f2c4c] font-bold text-base sm:text-lg py-3.5 px-8 sm:px-12 rounded-full shadow-lg shadow-black/10 transition-transform transform hover:-translate-y-1 whitespace-nowrap active:scale-95"

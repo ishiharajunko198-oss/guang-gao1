@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { MousePointerClick, TrendingUp, Search, DollarSign, Package, Activity, Info } from 'lucide-react';
 
@@ -10,7 +11,7 @@ const ExtensionClickView: React.FC = () => {
   ] as const;
 
   return (
-    <section className="py-24 bg-[#f8fafc] overflow-hidden">
+    <section id="extension-view" className="py-24 bg-[#f8fafc] overflow-hidden scroll-mt-20">
       <div className="container mx-auto px-4">
         
         {/* Header */}

@@ -1,3 +1,5 @@
+
+// Removed incorrect 'border' named export from React import
 import React from 'react';
 import { Search, TrendingUp, Eye, ArrowDown, XCircle, CheckCircle2 } from 'lucide-react';
 
@@ -69,15 +71,15 @@ const PainPoints: React.FC = () => {
              <ArrowDown size={40} className="animate-bounce" style={{ animationDelay: '0.4s' }} />
            </div>
            
-           <h3 className="text-2xl md:text-3xl font-bold text-gray-800">
+           <h2 className="text-2xl md:text-3xl font-bold text-gray-800">
              そのお悩み、<span className="text-[#ff9900] text-3xl md:text-4xl mx-2">SellerSprite</span> で解決できます！
-           </h3>
+           </h2>
         </div>
 
-        {/* 3. The Solutions (Featured Boxes) */}
+        {/* 3. The Solutions (Featured Boxes) - Removed hover interaction effects */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto mt-8">
           {/* Solution 1 */}
-          <div className="bg-orange-50/50 border-2 border-orange-100 p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow transform hover:-translate-y-1">
+          <div className="bg-orange-50/50 border-2 border-orange-100 p-8 rounded-xl shadow-lg transition-shadow">
             <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-6 shadow-sm text-[#ff9900]">
               <Search size={32} />
             </div>
@@ -97,7 +99,7 @@ const PainPoints: React.FC = () => {
           </div>
 
           {/* Solution 2 */}
-          <div className="bg-amber-50/50 border-2 border-amber-100 p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow transform hover:-translate-y-1">
+          <div className="bg-amber-50/50 border-2 border-amber-100 p-8 rounded-xl shadow-lg transition-shadow">
             <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-6 shadow-sm text-amber-500">
               <Eye size={32} />
             </div>
@@ -117,7 +119,7 @@ const PainPoints: React.FC = () => {
           </div>
 
           {/* Solution 3 */}
-          <div className="bg-orange-100/30 border-2 border-orange-200 p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow transform hover:-translate-y-1">
+          <div className="bg-orange-100/30 border-2 border-orange-200 p-8 rounded-xl shadow-lg transition-shadow">
             <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-6 shadow-sm text-orange-600">
               <TrendingUp size={32} />
             </div>

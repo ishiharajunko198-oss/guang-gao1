@@ -51,9 +51,9 @@ const Faq: React.FC = () => {
                 onClick={() => toggleFaq(index)}
                 aria-expanded={openIndex === index}
               >
-                <span className="font-bold text-gray-800 text-lg pr-8">
+                <h2 className="font-bold text-gray-800 text-lg pr-8">
                   <span className="text-[#ff9900] mr-2 text-base">Q.</span>{faq.question}
-                </span>
+                </h2>
                 {openIndex === index ? (
                   <Minus className="text-[#ff9900] flex-shrink-0" aria-hidden="true" />
                 ) : (
@@ -66,8 +66,10 @@ const Faq: React.FC = () => {
                 }`}
               >
                 <div className="px-6 pb-6 pt-2 text-gray-600 bg-white border-t border-gray-100">
-                  <span className="text-red-500 font-bold mr-2">A.</span>
-                  {faq.answer}
+                  <h3 className="text-gray-600 inline leading-relaxed">
+                    <span className="text-red-500 font-bold mr-2">A.</span>
+                    {faq.answer}
+                  </h3>
                 </div>
               </div>
             </div>

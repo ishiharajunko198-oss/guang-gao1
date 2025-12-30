@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { HeadphonesIcon, BookOpen, Video } from 'lucide-react';
 
@@ -15,7 +16,7 @@ const Support: React.FC = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="text-center p-6 rounded-lg border border-gray-100 hover:border-jp-blue/30 transition-colors">
+          <div className="text-center p-6 rounded-lg border border-gray-100">
             <div className="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-4 text-jp-blue">
               <HeadphonesIcon size={32} />
             </div>
@@ -25,7 +26,7 @@ const Support: React.FC = () => {
             </p>
           </div>
 
-          <div className="text-center p-6 rounded-lg border border-gray-100 hover:border-jp-blue/30 transition-colors">
+          <div className="text-center p-6 rounded-lg border border-gray-100">
              <div className="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-4 text-jp-blue">
               <BookOpen size={32} />
             </div>
@@ -35,7 +36,7 @@ const Support: React.FC = () => {
             </p>
           </div>
 
-          <div className="text-center p-6 rounded-lg border border-gray-100 hover:border-jp-blue/30 transition-colors">
+          <div className="text-center p-6 rounded-lg border border-gray-100">
              <div className="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-4 text-jp-blue">
               <Video size={32} />
             </div>

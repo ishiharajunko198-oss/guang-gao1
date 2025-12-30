@@ -1,6 +1,6 @@
 
-import React, { useState, useRef } from 'react';
-import { CheckCircle2, ChevronRight, Loader2, Send, Download, FileText, AlertCircle, ShieldCheck, Lock } from 'lucide-react';
+import React, { useState, useRef, useEffect } from 'react';
+import { CheckCircle2, ChevronRight, Loader2, Send, Download, FileText, AlertCircle, ShieldCheck, Lock, ChevronDown } from 'lucide-react';
 
 const PRIVACY_POLICY_URL = "https://www.sellersprite.com/jp/v3/knowledge/feature/privacy-policy";
 
@@ -9,6 +9,27 @@ const RequestMaterials: React.FC = () => {
   const [isSuccess, setIsSuccess] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
   const formRef = useRef<HTMLFormElement>(null);
+
+  // SEO Optimization for the Request Materials page
+  useEffect(() => {
+    const originalTitle = document.title;
+    const metaDesc = document.querySelector('meta[name="description"]');
+    const originalDesc = metaDesc?.getAttribute('content');
+
+    // Update Title and Description as requested (Attractive wording)
+    document.title = "【無料】Amazon専門家の成功資料を大放送！ | セラースプライト導入ガイド";
+    if (metaDesc) {
+      metaDesc.setAttribute('content', "この機会を逃さず、無料の限定資料をぜひお受け取りください。Amazon売上最大化の秘訣が詰まった全42ページのガイドです。");
+    }
+
+    return () => {
+      // Restore original tags when navigating away
+      document.title = originalTitle;
+      if (metaDesc && originalDesc) {
+        metaDesc.setAttribute('content', originalDesc);
+      }
+    };
+  }, []);
 
   const validateEmail = (email: string) => {
     const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -23,6 +44,7 @@ const RequestMaterials: React.FC = () => {
     const kana = formData.get('kana') as string;
     const company = formData.get('company') as string;
     const dept = formData.get('dept') as string;
+    const genre = formData.get('genre') as string;
     const email = formData.get('email') as string;
     const tel = formData.get('tel') as string;
     const agreed = formData.get('agreed') === 'on';
@@ -32,6 +54,7 @@ const RequestMaterials: React.FC = () => {
     if (!kana.trim()) newErrors.kana = "フリガナを入力してください";
     if (!company.trim()) newErrors.company = "会社名を入力してください";
     if (!dept.trim()) newErrors.dept = "部署名を入力してください";
+    if (!genre) newErrors.genre = "ジャンルを選択してください";
     if (!tel.trim()) newErrors.tel = "電話番号を入力してください";
     
     if (!email.trim()) {
@@ -44,7 +67,6 @@ const RequestMaterials: React.FC = () => {
 
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);
-      // 最初のエラー項目までスクロール
       const firstErrorKey = Object.keys(newErrors)[0];
       const element = document.getElementsByName(firstErrorKey)[0];
       if (element) {
@@ -56,7 +78,6 @@ const RequestMaterials: React.FC = () => {
     setErrors({});
     setIsSubmitting(true);
 
-    // 送信シミュレーション
     setTimeout(() => {
       setIsSubmitting(false);
       setIsSuccess(true);
@@ -64,13 +85,12 @@ const RequestMaterials: React.FC = () => {
     }, 1500);
   };
 
+  const amazonCategories = [
+    "ホーム＆キッチン", "家電＆カメラ", "おもちゃ", "ホビー", "ファッション", "ビューティー", "ドラッグストア", "食品・飲料・お酒", "ペット用品", "ベビー＆マタニティ", "スポーツ＆アウトドア", "カー＆バイク用品", "DIY・工具・ガーデン", "楽器・音響機器", "文房具・オフィス用品", "パソコン・周辺機器", "本", "その他"
+  ];
+
   const interestOptions = [
-    "料金プランのお見積りがほしい",
-    "サービスの詳細を知りたい",
-    "お打ち合わせを希望する",
-    "無料トライアルを試したい",
-    "デモの実演を見たい",
-    "その他（自由記入欄）"
+    "料金プランのお見積りがほしい", "サービスの詳細を知りたい", "お打ち合わせを希望する", "無料トライアルを試したい", "デモの実演を見たい", "その他（自由記入欄）"
   ];
 
   if (isSuccess) {
@@ -110,7 +130,7 @@ const RequestMaterials: React.FC = () => {
       <div className="container mx-auto px-4 max-w-6xl">
         <div className="bg-white shadow-[0_40px_100px_rgba(15,44,76,0.08)] rounded-[2rem] overflow-hidden flex flex-col lg:flex-row border border-gray-100">
           
-          {/* 左側: 資料内容概要 */}
+          {/* 左侧: 资料内容介绍 (Introduction sections with H tags for SEO) */}
           <aside className="lg:w-1/3 bg-[#f1f5f9] p-8 lg:p-12 border-r border-gray-200">
             <h2 className="text-xl font-black text-jp-navy mb-8 flex items-center gap-2">
               <span className="w-1.5 h-6 bg-jp-cta rounded-full"></span>
@@ -161,10 +181,10 @@ const RequestMaterials: React.FC = () => {
             </div>
           </aside>
 
-          {/* 右側: フォーム */}
+          {/* 右侧: 资料请求表单 (Main page H1 located here) */}
           <main className="lg:w-2/3 p-8 lg:p-16">
             <div className="mb-10 text-center lg:text-left">
-              <h1 className="text-2xl font-black text-jp-navy mb-2">お問い合わせ・資料請求</h1>
+              <h1 className="text-2xl font-black text-jp-navy mb-2 tracking-tight">お問い合わせ・資料請求</h1>
               <p className="text-gray-400 text-xs">以下のフォームに必要事項をご記入ください。</p>
             </div>
 
@@ -176,12 +196,7 @@ const RequestMaterials: React.FC = () => {
                     <label className="text-[13px] font-black text-jp-navy">氏名</label>
                     <span className="bg-red-500 text-white text-[10px] px-1.5 py-0.5 rounded font-bold">必須</span>
                   </div>
-                  <input 
-                    name="name" 
-                    type="text" 
-                    placeholder="例：田中 太郎" 
-                    className={`w-full px-5 py-4 bg-gray-50 border rounded-xl outline-none transition-all text-sm placeholder:text-[10px] xs:placeholder:text-[11px] sm:placeholder:text-sm ${errors.name ? 'border-red-400 ring-2 ring-red-50' : 'border-gray-200 focus:border-jp-cta focus:bg-white'}`} 
-                  />
+                  <input name="name" type="text" placeholder="例：田中 太郎" className={`w-full px-5 py-4 bg-gray-50 border rounded-xl outline-none transition-all text-sm placeholder:text-[10px] xs:placeholder:text-[11px] sm:placeholder:text-sm ${errors.name ? 'border-red-400 ring-2 ring-red-50' : 'border-gray-200 focus:border-jp-cta focus:bg-white'}`} />
                   {errors.name && <p className="text-red-500 text-[11px] flex items-center gap-1 font-bold animate-pulse"><AlertCircle size={12} /> {errors.name}</p>}
                 </div>
                 <div className="space-y-2">
@@ -189,12 +204,7 @@ const RequestMaterials: React.FC = () => {
                     <label className="text-[13px] font-black text-jp-navy">フリガナ</label>
                     <span className="bg-red-500 text-white text-[10px] px-1.5 py-0.5 rounded font-bold">必須</span>
                   </div>
-                  <input 
-                    name="kana" 
-                    type="text" 
-                    placeholder="例：タナカ タロウ" 
-                    className={`w-full px-5 py-4 bg-gray-50 border rounded-xl outline-none transition-all text-sm placeholder:text-[10px] xs:placeholder:text-[11px] sm:placeholder:text-sm ${errors.kana ? 'border-red-400 ring-2 ring-red-50' : 'border-gray-200 focus:border-jp-cta focus:bg-white'}`} 
-                  />
+                  <input name="kana" type="text" placeholder="例：タナカ タロウ" className={`w-full px-5 py-4 bg-gray-50 border rounded-xl outline-none transition-all text-sm placeholder:text-[10px] xs:placeholder:text-[11px] sm:placeholder:text-sm ${errors.kana ? 'border-red-400 ring-2 ring-red-50' : 'border-gray-200 focus:border-jp-cta focus:bg-white'}`} />
                   {errors.kana && <p className="text-red-500 text-[11px] flex items-center gap-1 font-bold animate-pulse"><AlertCircle size={12} /> {errors.kana}</p>}
                 </div>
               </div>
@@ -206,12 +216,7 @@ const RequestMaterials: React.FC = () => {
                     <label className="text-[13px] font-black text-jp-navy">会社名</label>
                     <span className="bg-red-500 text-white text-[10px] px-1.5 py-0.5 rounded font-bold">必須</span>
                   </div>
-                  <input 
-                    name="company" 
-                    type="text" 
-                    placeholder="例：株式会社SellerSprite" 
-                    className={`w-full px-5 py-4 bg-gray-50 border rounded-xl outline-none transition-all text-sm placeholder:text-[10px] xs:placeholder:text-[11px] sm:placeholder:text-sm ${errors.company ? 'border-red-400 ring-2 ring-red-50' : 'border-gray-200 focus:border-jp-cta focus:bg-white'}`} 
-                  />
+                  <input name="company" type="text" placeholder="例：株式会社SellerSprite" className={`w-full px-5 py-4 bg-gray-50 border rounded-xl outline-none transition-all text-sm placeholder:text-[10px] xs:placeholder:text-[11px] sm:placeholder:text-sm ${errors.company ? 'border-red-400 ring-2 ring-red-50' : 'border-gray-200 focus:border-jp-cta focus:bg-white'}`} />
                   {errors.company && <p className="text-red-500 text-[11px] flex items-center gap-1 font-bold animate-pulse"><AlertCircle size={12} /> {errors.company}</p>}
                 </div>
                 <div className="space-y-2">
@@ -219,14 +224,29 @@ const RequestMaterials: React.FC = () => {
                     <label className="text-[13px] font-black text-jp-navy">部署名</label>
                     <span className="bg-red-500 text-white text-[10px] px-1.5 py-0.5 rounded font-bold">必須</span>
                   </div>
-                  <input 
-                    name="dept" 
-                    type="text" 
-                    placeholder="例：EC事業部（なしの場合は「なし」）" 
-                    className={`w-full px-5 py-4 bg-gray-50 border rounded-xl outline-none transition-all text-sm placeholder:text-[10px] xs:placeholder:text-[11px] sm:placeholder:text-sm ${errors.dept ? 'border-red-400 ring-2 ring-red-50' : 'border-gray-200 focus:border-jp-cta focus:bg-white'}`} 
-                  />
+                  <input name="dept" type="text" placeholder="例：EC事業部（なしの場合は「なし」）" className={`w-full px-5 py-4 bg-gray-50 border rounded-xl outline-none transition-all text-sm placeholder:text-[10px] xs:placeholder:text-[11px] sm:placeholder:text-sm ${errors.dept ? 'border-red-400 ring-2 ring-red-50' : 'border-gray-200 focus:border-jp-cta focus:bg-white'}`} />
                   {errors.dept && <p className="text-red-500 text-[11px] flex items-center gap-1 font-bold animate-pulse"><AlertCircle size={12} /> {errors.dept}</p>}
                 </div>
+              </div>
+
+              {/* ジャンル (Genre Dropdown) */}
+              <div className="space-y-2">
+                <div className="flex items-center gap-2">
+                  <label className="text-[13px] font-black text-jp-navy">ジャンル</label>
+                  <span className="bg-red-500 text-white text-[10px] px-1.5 py-0.5 rounded font-bold">必須</span>
+                </div>
+                <div className="relative">
+                  <select name="genre" className={`w-full px-5 py-4 bg-gray-50 border rounded-xl outline-none transition-all text-sm appearance-none pr-12 ${errors.genre ? 'border-red-400 ring-2 ring-red-50' : 'border-gray-200 focus:border-jp-cta focus:bg-white'}`} defaultValue="">
+                    <option value="" disabled>販売ジャンルを選択してください</option>
+                    {amazonCategories.map((cat, idx) => (
+                      <option key={idx} value={cat}>{cat}</option>
+                    ))}
+                  </select>
+                  <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-gray-400">
+                    <ChevronDown size={20} />
+                  </div>
+                </div>
+                {errors.genre && <p className="text-red-500 text-[11px] flex items-center gap-1 font-bold animate-pulse"><AlertCircle size={12} /> {errors.genre}</p>}
               </div>
 
               {/* メールアドレス & 電話番号 */}
@@ -236,12 +256,7 @@ const RequestMaterials: React.FC = () => {
                     <label className="text-[13px] font-black text-jp-navy">メールアドレス</label>
                     <span className="bg-red-500 text-white text-[10px] px-1.5 py-0.5 rounded font-bold">必須</span>
                   </div>
-                  <input 
-                    name="email" 
-                    type="email" 
-                    placeholder="例：sellersprite@example.com" 
-                    className={`w-full px-5 py-4 bg-gray-50 border rounded-xl outline-none transition-all text-sm placeholder:text-[10px] xs:placeholder:text-[11px] sm:placeholder:text-sm ${errors.email ? 'border-red-400 ring-2 ring-red-50' : 'border-gray-200 focus:border-jp-cta focus:bg-white'}`} 
-                  />
+                  <input name="email" type="email" placeholder="例：sellersprite@example.com" className={`w-full px-5 py-4 bg-gray-50 border rounded-xl outline-none transition-all text-sm placeholder:text-[10px] xs:placeholder:text-[11px] sm:placeholder:text-sm ${errors.email ? 'border-red-400 ring-2 ring-red-50' : 'border-gray-200 focus:border-jp-cta focus:bg-white'}`} />
                   {errors.email && <p className="text-red-500 text-[11px] flex items-center gap-1 font-bold animate-pulse"><AlertCircle size={12} /> {errors.email}</p>}
                 </div>
                 <div className="space-y-2">
@@ -249,12 +264,7 @@ const RequestMaterials: React.FC = () => {
                     <label className="text-[13px] font-black text-jp-navy">電話番号</label>
                     <span className="bg-red-500 text-white text-[10px] px-1.5 py-0.5 rounded font-bold">必須</span>
                   </div>
-                  <input 
-                    name="tel" 
-                    type="tel" 
-                    placeholder="例：03-1234-5678" 
-                    className={`w-full px-5 py-4 bg-gray-50 border rounded-xl outline-none transition-all text-sm placeholder:text-[10px] xs:placeholder:text-[11px] sm:placeholder:text-sm ${errors.tel ? 'border-red-400 ring-2 ring-red-50' : 'border-gray-200 focus:border-jp-cta focus:bg-white'}`} 
-                  />
+                  <input name="tel" type="tel" placeholder="例：03-1234-5678" className={`w-full px-5 py-4 bg-gray-50 border rounded-xl outline-none transition-all text-sm placeholder:text-[10px] xs:placeholder:text-[11px] sm:placeholder:text-sm ${errors.tel ? 'border-red-400 ring-2 ring-red-50' : 'border-gray-200 focus:border-jp-cta focus:bg-white'}`} />
                   {errors.tel && <p className="text-red-500 text-[11px] flex items-center gap-1 font-bold animate-pulse"><AlertCircle size={12} /> {errors.tel}</p>}
                 </div>
               </div>
@@ -272,16 +282,11 @@ const RequestMaterials: React.FC = () => {
                 </div>
                 <div className="mt-4">
                   <label className="block text-[12px] text-gray-500 mb-2">その他（自由記入欄）</label>
-                  <textarea 
-                    name="message" 
-                    rows={3} 
-                    placeholder="具体的なご要望やご質問があればこちらにご記入ください（小規模なデモ希望など）" 
-                    className="w-full px-5 py-4 bg-gray-50 border border-gray-200 rounded-xl focus:border-jp-cta focus:bg-white outline-none transition-all text-sm resize-none placeholder:text-[10px] xs:placeholder:text-[11px] sm:placeholder:text-sm"
-                  ></textarea>
+                  <textarea name="message" rows={3} placeholder="具体的なご要望やご質問があればこちらにご記入ください（小規模なデモ希望など）" className="w-full px-5 py-4 bg-gray-50 border border-gray-200 rounded-xl focus:border-jp-cta focus:bg-white outline-none transition-all text-sm resize-none placeholder:text-[10px] xs:placeholder:text-[11px] sm:placeholder:text-sm"></textarea>
                 </div>
               </div>
 
-              {/* 同意事項 */}
+              {/* 同意事项 */}
               <div className="bg-[#fffbf2] p-6 rounded-2xl border border-[#ffecb3]">
                 <p className="text-[11px] text-gray-500 mb-4 leading-relaxed">
                    ご提供いただいた情報は当社の<a href={PRIVACY_POLICY_URL} target="_blank" rel="noopener noreferrer" className="text-jp-blue underline font-bold">プライバシーポリシー</a>に基づき適切に管理いたします。内容をご確認いただき、同意される方のみ送信ボタンを押してください。
@@ -299,13 +304,9 @@ const RequestMaterials: React.FC = () => {
                 {errors.agreed && <p className="text-red-500 text-[11px] mt-2 font-bold animate-pulse">{errors.agreed}</p>}
               </div>
 
-              {/* 送信ボタン */}
+              {/* 送信按钮 */}
               <div className="flex flex-col items-center gap-4 pt-4">
-                <button 
-                  disabled={isSubmitting}
-                  type="submit" 
-                  className="w-full md:w-[360px] bg-jp-cta hover:bg-jp-ctaHover text-white font-black py-5 rounded-full shadow-xl shadow-orange-500/20 transform hover:-translate-y-1 transition-all flex items-center justify-center gap-3 disabled:opacity-70 disabled:hover:translate-y-0 active:scale-95"
-                >
+                <button disabled={isSubmitting} type="submit" className="w-full md:w-[360px] bg-jp-cta hover:bg-jp-ctaHover text-white font-black py-5 rounded-full shadow-xl shadow-orange-500/20 transform hover:-translate-y-1 transition-all flex items-center justify-center gap-3 disabled:opacity-70 disabled:hover:translate-y-0 active:scale-95">
                   {isSubmitting ? <Loader2 className="animate-spin" /> : <Send size={20} />}
                   <span className="text-xl">送 信</span>
                 </button>

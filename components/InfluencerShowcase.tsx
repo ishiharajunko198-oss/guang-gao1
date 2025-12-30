@@ -43,16 +43,6 @@ const InfluencerShowcase: React.FC = () => {
       thumbnail: "https://img.youtube.com/vi/HUjQWS7WAyc/maxresdefault.jpg",
       quote: "「まず使いたい機能10選！商品リサーチツール「セラースプライト」で中国輸入＆米国アマゾン物販を効率化」",
       videoUrl: "https://www.youtube.com/watch?v=HUjQWS7WAyc"
-    },
-    {
-      id: 4,
-      name: "ECグロースチャンネル",
-      handle: "@ecgrowth",
-      platform: 'YouTube',
-      avatar: "https://o.sellersprite.com/docs/202512/sellersprite-2025122305001187468.png",
-      thumbnail: "https://img.youtube.com/vi/I2QIDtCKlKw/maxresdefault.jpg",
-      quote: "「【保存版】Amazonで見るべき指標とは？セラースプライトは必須！？プロECコンサルが全て解説します」",
-      videoUrl: "https://www.youtube.com/watch?v=I2QIDtCKlKw"
     }
   ];
 
