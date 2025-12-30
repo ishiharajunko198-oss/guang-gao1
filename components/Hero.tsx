@@ -52,7 +52,7 @@ const Hero: React.FC = () => {
             </h1>
             
             <p className="text-gray-500 text-lg lg:text-xl mb-12 leading-relaxed max-w-2xl mx-auto lg:mx-0 font-medium">
-              ビッグデータ × AI技術で、竞合分析、キーワード発掘、需要予測を完全サポート。<br className="hidden md:block"/>
+              ビッグデータ × AI技術で、競合分析、キーワード発掘、需要予測を完全サポート。<br className="hidden md:block"/>
               感覚に頼らない「勝てるAmazon運営」を実現します。
             </p>
 
