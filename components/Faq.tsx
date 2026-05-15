@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Plus, Minus } from 'lucide-react';
 import { FaqItem } from '../types';
 
@@ -34,7 +34,7 @@ const Faq: React.FC = () => {
   };
 
   return (
-    <section id="faq" className="py-20 bg-gray-50">
+    <section id="faq" className="py-12 bg-gray-50">
       <div className="container mx-auto px-4 max-w-3xl">
         <div className="text-center mb-12">
           <span className="text-[#ff9900] font-bold tracking-widest text-sm uppercase">Q&A</span>

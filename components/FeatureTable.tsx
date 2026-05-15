@@ -136,7 +136,7 @@ const FeatureTable: React.FC = () => {
   const displayedCategories = isGlobalExpanded ? categories : categories.slice(0, 2);
 
   return (
-    <section ref={sectionRef} id="feature-table" className="py-24 bg-white overflow-hidden scroll-mt-20">
+    <section ref={sectionRef} id="feature-table" className="py-14 bg-white overflow-hidden scroll-mt-20">
       <div className="container mx-auto px-4 max-w-6xl">
         {/* Section Header */}
         <div className="text-center mb-16">

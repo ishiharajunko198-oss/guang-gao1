@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Search, BarChart3, Users, Zap, ArrowRight, CheckCircle2, ChevronLeft, ChevronRight, Cpu, ZoomIn, Target, FileText } from 'lucide-react';
+import { Search, BarChart3, Users, ArrowRight, CheckCircle2, ChevronLeft, ChevronRight, ZoomIn, Target, FileText } from 'lucide-react';
 
 interface FeatureProps {
   id: string;
@@ -11,6 +11,8 @@ interface FeatureProps {
   color: string;
   accentBorder: string;
   reverse: boolean;
+  cta: string;
+  ctaLink: string;
   onImageClick: (url: string) => void;
 }
 
@@ -66,7 +68,15 @@ const FeatureRow: React.FC<{ feature: FeatureProps }> = ({ feature }) => {
           {feature.desc}
         </p>
         
-        {/* Button container removed as per user request */}
+        <a
+          href={feature.ctaLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group inline-flex items-center gap-3 bg-[#ff9900] hover:bg-[#ff7700] text-white font-black px-8 py-4 rounded-full shadow-[0_10px_25px_rgba(255,153,0,0.3)] hover:shadow-[0_15px_35px_rgba(255,153,0,0.4)] transition-all transform hover:-translate-y-1"
+        >
+          <span>{feature.cta}</span>
+          <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" strokeWidth={3} />
+        </a>
       </div>
 
       {/* Image Slider */}
@@ -121,9 +131,9 @@ const ServiceFeatures: React.FC = () => {
   const features = [
     {
       id: "01",
-      title: "「売れるキーワード」を\n逃さず見つける",
-      points: ["数百・数千の関連ワードを瞬時に抽出", "競合の流入ワード・注文ワードまで把握可能", "SEO対策に必要な検索順位を自動追跡"],
-      desc: "月間検索ボリューム・競合状況・PPC入札額などを一括分析し、无駄な施策を減らし、購買につながるキーワード戦略を実現できます。感覚や経験に頼らない、データ主導のAmazon SEO・集客を今すぐ始められます。",
+      title: "「Amazon キーワードツール」\nの決定版",
+      points: ["任意ワードのAmazon 検索ボリュームを確認可能", "関連キーワード・ASIN別の流入ワードを一括抽出", "Amazon SEOに必須の検索順位を無料で追跡"],
+      desc: "月間検索ボリューム・競争状況・PPC入札額などを一括分析し、無駄な施策を減らし、購買につながるキーワード戦略を実現できます。感覚や経験に頼らない、データ主導のAmazon SEO・集客を今すぐ始められます。",
       icon: Search,
       images: [
         "https://o.sellersprite.com/docs/202512/sellersprite-2025122311423206327.jpg",
@@ -131,13 +141,16 @@ const ServiceFeatures: React.FC = () => {
       ],
       color: "bg-orange-50 text-[#ff9900]",
       accentBorder: "border-orange-100",
-      reverse: false
+      reverse: false,
+      cta: "キーワード分析を試す",
+      ctaLink: "https://www.sellersprite.com/jp/v3/keyword-miner"
     },
     {
       id: "02",
-      title: "人より先一歩で\n次のヒット商品をリサーチ",
-      points: ["トレンド商品・急成長商品を選定", "ニッチなブルーオーシャン市場を即発見", "迷わず参入できるカテゴリーを絞り込みます。"],
-      desc: "「なぜ売れるのか」「今から参入できるのか」を数値で判断します。市場規模・成長性・競争難易度・利益余地をまとめて可視化し、失敗リスクを抑えながら、勝てる商品だけを選び抜きます。",
+      title: "人より先一歩のリサーチ法\n" +
+        "Amazon 売れる商品を見つける",
+      points: ["売上ランキング履歴、季節変動パターンを把握", "ニッチなブルーオーシャン市場を即発見", "迷わず参入できるカテゴリーを特定。"],
+      desc: "商品単位の販売数・売上推定・価格推移を瞬時表示。さらに、市場全体の販売規模・成長性・競争難易度までデータで可視化し、「なぜ売れているのか」「今から参入できる市場なのか」を把握したうえで、戦略的な商品選定を実現します。",
       icon: BarChart3,
       images: [
         "https://o.sellersprite.com/docs/202512/sellersprite-2025122301024535802.jpg",
@@ -145,13 +158,15 @@ const ServiceFeatures: React.FC = () => {
       ],
       color: "bg-amber-50 text-amber-600",
       accentBorder: "border-amber-100",
-      reverse: true
+      reverse: true,
+      cta: "市場分析を試す",
+      ctaLink: "https://www.sellersprite.com/jp/v2/market-research"
     },
     {
       id: "03",
-      title: "ライバルの裏側を\nデータで完全可視化",
-      points: ["販売数・売上・在庫推移をリアルタイム監視", "レビュー分析で顧客の不満点を抽出", "広告のキーワード戦略を把握"],
-      desc: "竞合の売上データから広告の打ち方まで、丸裸にします。後発からでも勝てるポイントを見つけ出し、効率的な差別化を実現します。",
+      title: "ライバルセラーの戦略を\n丸裸に",
+      points: ["競合ASINの売上・価格・ランキングを分析", "AIレビュー分析で売れる理由を可視化", "広告・流入キーワードを逆解析"],
+      desc: "競合のラインナップ・価格戦略・キーワード戦略を一括分析。売上動向から広告まで可視化することで、後発参入でも勝てる差別化ポイントを発見できます。",
       icon: Users,
       images: [
         "	https://o.sellersprite.com/docs/202512/sellersprite-2025122601164712213.png",
@@ -159,13 +174,15 @@ const ServiceFeatures: React.FC = () => {
       ],
       color: "bg-orange-50 text-[#ff9900]",
       accentBorder: "border-orange-100",
-      reverse: false
+      reverse: false,
+      cta: "競合分析を試す",
+      ctaLink: "https://www.sellersprite.com/jp/v3/competitor-lookup"
     },
     {
       id: "04",
       title: "無料機能・運営効率化",
-      points: ["商品カタログ作成にAIが補助", "keepa API連携でkeepaデータを無料提供", "正規リンク、集合リンク、「カートに入れる」リンクを簡単作成"],
-      desc: "商品カタログ作成の手間とミスを减らし、誰でも安定した品質のページを短時間で作成できます。さらに、keepa代替機能で価格推移・ランキング変動のチェックもスムーズ。",
+      points: ["商品カタログ作成にAIが補助", "keepa API連携でkeepaデータを無料提供", "FBA手数料・原価・広告費まで反映した高精度利益計算機"],
+      desc: "無料のKeepaデータと「販売数予測」機能で仕入れの精度を高める一方、AI補助で高品質なカタログ作成をスピードアップします。さらに、広告費やFBA手数料を反映した高精度な利益計算機も完備し、利益を最大化します。",
       icon: Target,
       images: [
         "https://o.sellersprite.com/docs/202512/sellersprite-2025122304295488924.jpg",
@@ -173,13 +190,15 @@ const ServiceFeatures: React.FC = () => {
       ],
       color: "bg-amber-50 text-amber-600",
       accentBorder: "border-amber-100",
-      reverse: true
+      reverse: true,
+      cta: "利益計算機を試す",
+      ctaLink: "https://www.sellersprite.com/jp/v3/calculator/index"
     },
     {
       id: "05",
       title: "AIを最強のアシスタントに！",
-      points: ["竞合商品をAIが特定・提案", "市場全体の状況を自動分析", "Keepaグラフをまとめてテキスト解析"],
-      desc: "初心者も安心！何時間もかけて行っていた競合探し、市场分析、グラフ読み取りをAI（Gemini搭載）が一瞬で代行。複雑なデータを整理し、「今見るべきポイント」だけをわかりやすく提示します。",
+      points: ["盲点だった競合もAIが自動特定・リストアップ", "8つの評価軸でAIが任意サブ市場を徹底分析", "AI keepa解析から商品の「運営履歴」を完全に解明"],
+      desc: "データ分析の専門知識がなくても、見るべきポイントをひと目で把握できます。経験の浅い市場でも迷うことなく、プロと同等以上の精度で勝算のある戦略をスピーディーに立案可能です。",
       icon: FileText,
       images: [
         "https://o.sellersprite.com/docs/202512/sellersprite-2025122404453944341.jpg",
@@ -187,24 +206,27 @@ const ServiceFeatures: React.FC = () => {
       ],
       color: "bg-orange-50 text-[#ff9900]",
       accentBorder: "border-orange-100",
-      reverse: false
+      reverse: false,
+      cta: "AI分析を試す",
+      ctaLink: "https://www.sellersprite.com/jp/v3/ai-history"
     }
   ];
 
   return (
-    <section id="features" className="py-24 bg-white overflow-hidden">
+    <section id="features" className="py-12 bg-white overflow-hidden">
       <div className="container mx-auto px-4">
         {/* Section Header */}
-        <div className="text-center mb-28 relative">
+        <div className="text-center mb-14 relative">
           <span className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-[8rem] sm:text-[14rem] font-black text-orange-50/40 select-none -z-10">CORE</span>
           <div className="relative z-10">
             <span className="text-[#ff9900] font-bold tracking-[0.4em] text-sm uppercase mb-4 block">Functions</span>
-            <h2 className="text-[1.2rem] xs:text-[1.35rem] sm:text-5xl font-black text-jp-navy mt-4 leading-tight whitespace-nowrap">選ばれる「５つの強力な領域」</h2>
+            <h2 className="text-[1.2rem] xs:text-[1.35rem] sm:text-5xl font-black text-jp-navy mt-4 leading-tight whitespace-nowrap">なぜ100万人超のセラーに選ばれるのか</h2>
+            <h3 className="text-[1.2rem] mt-8 mx-auto">キーワード・商品・店舗・ライバル・市場の5つ領域を完全に網羅します。<br />せどり初心者からプロセラーまで簡単に利用できます。</h3>
             <div className="w-16 h-1.5 bg-[#ff9900] mx-auto mt-10 rounded-full"></div>
           </div>
         </div>
         
-        <div className="space-y-32 lg:space-y-48 max-w-7xl mx-auto">
+        <div className="space-y-32 lg:space-y-16 max-w-7xl mx-auto">
           {features.map((f) => (
             <FeatureRow key={f.id} feature={{...f, onImageClick: (url) => setZoomedImage(url)}} />
           ))}

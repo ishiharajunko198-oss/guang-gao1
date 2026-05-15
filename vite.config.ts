@@ -27,6 +27,16 @@ export default defineConfig({
   },
   server: {
     port: 3000,
-    open: true
+    open: true,
+    proxy: {
+      '/v3/api': {
+        target: 'https://sellersprite.jp',
+        changeOrigin: true,
+        headers: {
+          'origin': 'https://sellersprite.jp',
+          'referer': 'https://sellersprite.jp/introduction',
+        }
+      }
+    }
   }
 });

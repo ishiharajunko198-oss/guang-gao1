@@ -1,15 +1,18 @@
 import React from 'react';
 import { FileDown, ArrowRight } from 'lucide-react';
 
-const Hero: React.FC = () => {
-  const handleRequestMaterials = () => {
-    // 采用更简洁的相对哈希方式打开新标签页，确保稳定性
-    window.open("#request", "_blank");
-  };
+type Props = {
+  setOpenModal:  React.Dispatch<React.SetStateAction<boolean>>
+}
+
+const Hero: React.FC<Props> = ({setOpenModal}) => {
+  // const handleRequestMaterials = () => {
+  //   // 采用更简洁的相对哈希方式打开新标签页，确保稳定性
+  //   window.open("#request", "_blank");
+  // };
 
   return (
-    <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-32 overflow-hidden bg-white flex justify-center font-['Noto_Sans_JP']">
-      <div className="absolute inset-0 bg-gradient-to-br from-[#fffaf5] via-white to-[#fff5e6] -z-20"></div>
+    <section className="relative pt-16 pb-36 lg:pt-20 lg:pb-16 overflow-hidden flex justify-center font-['Noto_Sans_JP']" style={{ background: 'linear-gradient(180deg, #fff3de, white)' }}>
       <div className="absolute inset-0 z-0 pointer-events-none opacity-[0.4]" style={{ backgroundImage: 'radial-gradient(#ffd8a8 0.5px, transparent 0.5px)', backgroundSize: '30px 30px' }}></div>
 
       <div className="absolute inset-0 z-0 pointer-events-none opacity-[0.15]">
@@ -37,7 +40,7 @@ const Hero: React.FC = () => {
           <div className="flex-1 text-center lg:text-left min-w-[320px] z-10 lg:max-w-[55%] flex flex-col items-center lg:items-start">
             <div className="inline-flex items-center gap-2 sm:gap-3 mb-10 bg-white/90 shadow-[0_2px_15px_rgba(255,153,0,0.1)] backdrop-blur-sm px-4 sm:px-6 py-2.5 rounded-full border border-orange-100 max-w-full">
               <span className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-[#ff9900] flex-shrink-0"></span>
-              <p className="text-gray-600 font-bold text-[9px] xs:text-xs sm:text-sm tracking-widest whitespace-nowrap">Amazon出品者向け リサーチ・分析ツール</p>
+              <p className="text-gray-600 font-bold tracking-widest whitespace-nowrap">Amazon出品者向け リサーチ・分析ツール</p>
             </div>
             
             <h1 className="font-black leading-[1.2] mb-10 tracking-tight w-full">
@@ -46,17 +49,18 @@ const Hero: React.FC = () => {
               </span>
               <span className="relative block">
                 <span className="text-[1.75rem] sm:text-[3.5rem] lg:text-[5.4rem] bg-clip-text text-transparent bg-gradient-to-r from-[#ff9900] via-[#ffb347] to-[#ff9900] block whitespace-nowrap font-black leading-tight drop-shadow-[0_4px_10px_rgba(255,153,0,0.35)]">
-                  データで解決する
+                  データで解決
                 </span>
               </span>
             </h1>
             
-            <p className="text-gray-500 text-lg lg:text-xl mb-12 leading-relaxed max-w-2xl mx-auto lg:mx-0 font-medium">
-              ビッグデータ × AI技術で、競合分析、キーワード発掘、需要予測を完全サポート。<br className="hidden md:block"/>
-              感覚に頼らない「勝てるAmazon運営」を実現します。
+            <p className="text-gray-500 text-lg lg:text-xl leading-relaxed max-w-2xl mx-auto lg:mx-0 font-medium mb-14">
+
+              キーワード調査・販売数調べ・競合分析・利益計算まで<br className="hidden md:block"/>
+              Amazon.co.jpに特化したせどりツール、<span className="text-[#ff9900]">セラースプライト。</span>
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-5 sm:gap-8 justify-center lg:justify-start items-start relative mb-14 w-full">
+            <div className="flex flex-col sm:flex-row gap-5 sm:gap-8 justify-center lg:justify-start items-start relative lg:mb-14 w-full">
               <div className="relative group w-full sm:w-auto">
                 {/* Badge */}
                 <div className="absolute -top-[28px] left-1/2 sm:left-4 -translate-x-1/2 sm:translate-x-0 bg-[#e60012] text-white text-[11px] font-black px-3 py-1 rounded shadow-[0_4px_10px_rgba(230,0,18,0.3)] whitespace-nowrap z-20 animate-bounce">
@@ -91,7 +95,7 @@ const Hero: React.FC = () => {
               </div>
 
               <button 
-                onClick={handleRequestMaterials}
+                onClick={() => setOpenModal(true)}
                 className="bg-transparent hover:bg-gray-50 text-jp-navy border-2 border-jp-navy font-black rounded-full transition-all transform hover:-translate-y-1 flex items-center justify-center gap-2 text-lg w-full sm:w-[240px] h-[72px]"
               >
                 <FileDown size={22} />

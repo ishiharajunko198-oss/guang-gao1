@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 @layer base {
-  body {
-    @apply text-gray-900 antialiased;
-  }
+  body { font-family: 'Noto Sans JP', sans-serif; @apply text-gray-900 antialiased overflow-x-hidden bg-white; }
+  html { scroll-behavior: smooth; }
+  #root { min-height: 100vh; }
 }

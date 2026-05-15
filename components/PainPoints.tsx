@@ -5,7 +5,7 @@ import { Search, TrendingUp, Eye, ArrowDown, XCircle, CheckCircle2 } from 'lucid
 
 const PainPoints: React.FC = () => {
   return (
-    <section id="reasons" className="py-24 bg-white">
+    <section id="reasons" className="pt-24 pb-16 bg-white">
       <div className="container mx-auto px-4">
         
         {/* Section Header */}

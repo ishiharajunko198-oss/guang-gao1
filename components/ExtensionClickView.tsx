@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { MousePointerClick, TrendingUp, Search, DollarSign, Package, Activity, Info } from 'lucide-react';
+import { MousePointerClick, TrendingUp, Search, Package, Activity } from 'lucide-react';
 
 const ExtensionClickView: React.FC = () => {
   const [activeTab, setActiveTab] = useState<'search' | 'detail'>('search');
@@ -11,7 +11,7 @@ const ExtensionClickView: React.FC = () => {
   ] as const;
 
   return (
-    <section id="extension-view" className="py-24 bg-[#f8fafc] overflow-hidden scroll-mt-20">
+    <section id="extension-view" className="py-12 bg-[#f8fafc] overflow-hidden scroll-mt-20">
       <div className="container mx-auto px-4">
         
         {/* Header */}

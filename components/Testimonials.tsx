@@ -7,14 +7,14 @@ const Testimonials: React.FC = () => {
   const reviews: Testimonial[] = [
     {
       name: "田中 様",
-      role: "法人 Amazon运营担当",
+      role: "法人 Amazon運営担当",
       image: "https://o.sellersprite.com/docs/202512/sellersprite-2025122405122744197.jpg",
       content: "導入前はリサーチに1日3時間かかっていましたが、今では30分で完了します。浮いた時間で商品開発に注力でき、売上が昨対比200%になりました。",
       rating: 5
     },
     {
       name: "佐藤 様",
-      role: "个人事业主",
+      role: "個人事業主",
       image: "https://o.sellersprite.com/docs/202512/sellersprite-2025122405122754016.jpg",
       content: "競合分析機能が凄いです。ライバルがどんなキーワードで集客しているか丸わかりなので、後発でも勝てる商品ページが作れました。",
       rating: 5
@@ -55,7 +55,7 @@ const Testimonials: React.FC = () => {
   }, []);
 
   return (
-    <section id="testimonials" className="py-20 bg-jp-navy text-white relative">
+    <section id="testimonials" className="pt-12 pb-16 bg-jp-navy text-white relative">
        {/* Background pattern */}
        <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(#ffffff 1px, transparent 1px)', backgroundSize: '30px 30px' }}></div>
       
