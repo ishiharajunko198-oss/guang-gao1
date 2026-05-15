@@ -136,13 +136,26 @@ const FeatureTable: React.FC = () => {
   const displayedCategories = isGlobalExpanded ? categories : categories.slice(0, 2);
 
   return (
-    <section ref={sectionRef} id="feature-table" className="py-14 bg-white overflow-hidden scroll-mt-20">
-      <div className="container mx-auto px-4 max-w-6xl">
+    <section ref={sectionRef} id="feature-table" className="py-14 bg-white overflow-hidden scroll-mt-20 relative">
+      {/* Full-bleed decorative layer */}
+      <div className="absolute inset-0 w-screen -ml-[calc(50vw_-_50%)] -mr-[calc(50vw_-_50%)] overflow-hidden pointer-events-none">
+        {/* Top-left blob */}
+        <div className="absolute left-0 -translate-x-1/2 top-[12%] w-[32rem] h-[32rem] lg:w-[48rem] lg:h-[48rem] rounded-full bg-amber-200 opacity-20 blur-3xl" />
+        <div className="absolute left-0 -translate-x-1/2 top-[12%] w-[32rem] h-[32rem] lg:w-[48rem] lg:h-[48rem] rounded-full"
+          style={{ backgroundImage: `url("data:image/svg+xml,${encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="10" stroke="white" stroke-width="0.75" stroke-dasharray="12 5" stroke-linecap="round" fill="none"/><circle cx="50" cy="50" r="20" stroke="white" stroke-width="0.75" stroke-dasharray="12 5" stroke-linecap="round" fill="none"/><circle cx="50" cy="50" r="30" stroke="white" stroke-width="0.75" stroke-dasharray="12 5" stroke-linecap="round" fill="none"/><circle cx="50" cy="50" r="40" stroke="white" stroke-width="0.75" stroke-dasharray="12 5" stroke-linecap="round" fill="none"/></svg>')}")`,
+            backgroundSize: '100% 100%', backgroundRepeat: 'no-repeat' }} />
+        {/* Bottom-right blob */}
+        <div className="absolute right-0 translate-x-1/2 top-[80%] w-[32rem] h-[32rem] lg:w-[48rem] lg:h-[48rem] rounded-full bg-orange-200 opacity-20 blur-3xl" />
+        <div className="absolute right-0 translate-x-1/2 top-[80%] w-[32rem] h-[32rem] lg:w-[48rem] lg:h-[48rem] rounded-full"
+          style={{ backgroundImage: `url("data:image/svg+xml,${encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="10" stroke="white" stroke-width="0.75" stroke-dasharray="12 5" stroke-linecap="round" fill="none"/><circle cx="50" cy="50" r="20" stroke="white" stroke-width="0.75" stroke-dasharray="12 5" stroke-linecap="round" fill="none"/><circle cx="50" cy="50" r="30" stroke="white" stroke-width="0.75" stroke-dasharray="12 5" stroke-linecap="round" fill="none"/><circle cx="50" cy="50" r="40" stroke="white" stroke-width="0.75" stroke-dasharray="12 5" stroke-linecap="round" fill="none"/></svg>')}")`,
+            backgroundSize: '100% 100%', backgroundRepeat: 'no-repeat' }} />
+      </div>
+      <div className="container mx-auto px-4 max-w-6xl relative z-10">
         {/* Section Header */}
         <div className="text-center mb-16">
           <span className="text-[#ff9900] font-bold tracking-[0.2em] text-sm uppercase block mb-3">Comparison</span>
           <h2 className="text-3xl md:text-5xl font-black text-jp-navy leading-tight">
-            分析・機能一覧
+            機能一覧
           </h2>
           <div className="w-16 h-1 bg-[#ff9900] mx-auto mt-8 rounded-full"></div>
         </div>

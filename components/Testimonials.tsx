@@ -66,7 +66,7 @@ const Testimonials: React.FC = () => {
             導入企業様・ユーザー様の声
           </h2>
           <p className="text-gray-300 mt-4 whitespace-nowrap text-[10px] xs:text-xs sm:text-sm md:text-base">
-           全世界超100万人のセラー様にご利用いただいています
+            全世界で100万人以上のセラーにご利用いただいています
           </p>
         </div>
 

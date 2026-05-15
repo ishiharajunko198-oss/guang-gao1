@@ -91,9 +91,9 @@ const FeatureRow: React.FC<{ feature: FeatureProps }> = ({ feature }) => {
                       style={{ transform: `translateX(-${activeIndex * 100}%)` }}
                     >
                         {feature.images.map((img, idx) => (
-                          <div key={idx} className="w-full h-full flex-shrink-0 relative flex items-center justify-center">
+                          <div key={idx} className="w-full h-full flex-shrink-0 relative flex items-center justify-center rounded-2xl bg-white overflow-hidden">
                               <img src={img} alt="Preview" className="w-full h-full object-contain" />
-                              <div className="absolute inset-0 bg-transparent group-hover/slider:bg-orange-500/5 transition-colors duration-500 flex items-center justify-center">
+                              <div className="absolute inset-0 bg-transparent flex items-center justify-center">
                                 <div className="bg-white/95 backdrop-blur-sm text-[#ff9900] flex items-center gap-3 px-6 py-3 rounded-full shadow-2xl scale-0 group-hover/slider:scale-100 transition-all duration-300 transform -translate-y-6 group-hover/slider:translate-y-0 border border-gray-100">
                                   <ZoomIn size={20} />
                                   <span className="text-sm font-black">拡大表示</span>
@@ -213,11 +213,43 @@ const ServiceFeatures: React.FC = () => {
   ];
 
   return (
-    <section id="features" className="py-12 bg-white overflow-hidden">
-      <div className="container mx-auto px-4">
+    <section id="features" className="py-12 bg-white overflow-hidden relative">
+      {/* Full-bleed decorative layer spanning the entire section */}
+      <div className="absolute inset-0 w-screen -ml-[calc(50vw_-_50%)] -mr-[calc(50vw_-_50%)] overflow-hidden pointer-events-none">
+        {/* Large blobs — right side (features 01, 03, 05) */}
+        <div className="absolute right-0 translate-x-1/2 top-[12%] w-[32rem] h-[32rem] lg:w-[48rem] lg:h-[48rem] rounded-full bg-orange-200 opacity-20 blur-3xl" />
+        <div className="absolute right-0 translate-x-1/2 top-[46%] w-[32rem] h-[32rem] lg:w-[48rem] lg:h-[48rem] rounded-full bg-orange-200 opacity-20 blur-3xl" />
+        <div className="absolute right-0 translate-x-1/2 top-[80%] w-[32rem] h-[32rem] lg:w-[48rem] lg:h-[48rem] rounded-full bg-orange-200 opacity-20 blur-3xl" />
+        {/* Large blobs — left side (features 02, 04) */}
+        <div className="absolute left-0 -translate-x-1/2 top-[29%] w-[32rem] h-[32rem] lg:w-[48rem] lg:h-[48rem] rounded-full bg-amber-200 opacity-20 blur-3xl" />
+        <div className="absolute left-0 -translate-x-1/2 top-[63%] w-[32rem] h-[32rem] lg:w-[48rem] lg:h-[48rem] rounded-full bg-amber-200 opacity-20 blur-3xl" />
+        {/* Radar rings — right-side blobs */}
+        <div className="absolute right-0 translate-x-1/2 top-[12%] w-[32rem] h-[32rem] lg:w-[48rem] lg:h-[48rem] rounded-full"
+          style={{ backgroundImage: `url("data:image/svg+xml,${encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="10" stroke="white" stroke-width="0.75" stroke-dasharray="12 5" stroke-linecap="round" fill="none"/><circle cx="50" cy="50" r="20" stroke="white" stroke-width="0.75" stroke-dasharray="12 5" stroke-linecap="round" fill="none"/><circle cx="50" cy="50" r="30" stroke="white" stroke-width="0.75" stroke-dasharray="12 5" stroke-linecap="round" fill="none"/><circle cx="50" cy="50" r="40" stroke="white" stroke-width="0.75" stroke-dasharray="12 5" stroke-linecap="round" fill="none"/></svg>')}")`,
+            backgroundSize: '100% 100%', backgroundRepeat: 'no-repeat' }} />
+        <div className="absolute right-0 translate-x-1/2 top-[46%] w-[32rem] h-[32rem] lg:w-[48rem] lg:h-[48rem] rounded-full"
+          style={{ backgroundImage: `url("data:image/svg+xml,${encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="10" stroke="white" stroke-width="0.75" stroke-dasharray="12 5" stroke-linecap="round" fill="none"/><circle cx="50" cy="50" r="20" stroke="white" stroke-width="0.75" stroke-dasharray="12 5" stroke-linecap="round" fill="none"/><circle cx="50" cy="50" r="30" stroke="white" stroke-width="0.75" stroke-dasharray="12 5" stroke-linecap="round" fill="none"/><circle cx="50" cy="50" r="40" stroke="white" stroke-width="0.75" stroke-dasharray="12 5" stroke-linecap="round" fill="none"/></svg>')}")`,
+            backgroundSize: '100% 100%', backgroundRepeat: 'no-repeat' }} />
+        <div className="absolute right-0 translate-x-1/2 top-[80%] w-[32rem] h-[32rem] lg:w-[48rem] lg:h-[48rem] rounded-full"
+          style={{ backgroundImage: `url("data:image/svg+xml,${encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="10" stroke="white" stroke-width="0.75" stroke-dasharray="12 5" stroke-linecap="round" fill="none"/><circle cx="50" cy="50" r="20" stroke="white" stroke-width="0.75" stroke-dasharray="12 5" stroke-linecap="round" fill="none"/><circle cx="50" cy="50" r="30" stroke="white" stroke-width="0.75" stroke-dasharray="12 5" stroke-linecap="round" fill="none"/><circle cx="50" cy="50" r="40" stroke="white" stroke-width="0.75" stroke-dasharray="12 5" stroke-linecap="round" fill="none"/></svg>')}")`,
+            backgroundSize: '100% 100%', backgroundRepeat: 'no-repeat' }} />
+        {/* Radar rings — left-side blobs */}
+        <div className="absolute left-0 -translate-x-1/2 top-[29%] w-[32rem] h-[32rem] lg:w-[48rem] lg:h-[48rem] rounded-full"
+          style={{ backgroundImage: `url("data:image/svg+xml,${encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="10" stroke="white" stroke-width="0.75" stroke-dasharray="12 5" stroke-linecap="round" fill="none"/><circle cx="50" cy="50" r="20" stroke="white" stroke-width="0.75" stroke-dasharray="12 5" stroke-linecap="round" fill="none"/><circle cx="50" cy="50" r="30" stroke="white" stroke-width="0.75" stroke-dasharray="12 5" stroke-linecap="round" fill="none"/><circle cx="50" cy="50" r="40" stroke="white" stroke-width="0.75" stroke-dasharray="12 5" stroke-linecap="round" fill="none"/></svg>')}")`,
+            backgroundSize: '100% 100%', backgroundRepeat: 'no-repeat' }} />
+        <div className="absolute left-0 -translate-x-1/2 top-[63%] w-[32rem] h-[32rem] lg:w-[48rem] lg:h-[48rem] rounded-full"
+          style={{ backgroundImage: `url("data:image/svg+xml,${encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="10" stroke="white" stroke-width="0.75" stroke-dasharray="12 5" stroke-linecap="round" fill="none"/><circle cx="50" cy="50" r="20" stroke="white" stroke-width="0.75" stroke-dasharray="12 5" stroke-linecap="round" fill="none"/><circle cx="50" cy="50" r="30" stroke="white" stroke-width="0.75" stroke-dasharray="12 5" stroke-linecap="round" fill="none"/><circle cx="50" cy="50" r="40" stroke="white" stroke-width="0.75" stroke-dasharray="12 5" stroke-linecap="round" fill="none"/></svg>')}")`,
+            backgroundSize: '100% 100%', backgroundRepeat: 'no-repeat' }} />
+        {/* Small blobs — opposite sides interleaved */}
+        <div className="absolute left-0 -translate-x-1/2 top-[20%] w-64 h-64 lg:w-96 lg:h-96 rounded-full bg-orange-200 opacity-15 blur-2xl" />
+        <div className="absolute right-0 translate-x-1/2 top-[38%] w-64 h-64 lg:w-96 lg:h-96 rounded-full bg-amber-200 opacity-15 blur-2xl" />
+        <div className="absolute left-0 -translate-x-1/2 top-[55%] w-64 h-64 lg:w-96 lg:h-96 rounded-full bg-orange-200 opacity-15 blur-2xl" />
+        <div className="absolute right-0 translate-x-1/2 top-[72%] w-64 h-64 lg:w-96 lg:h-96 rounded-full bg-amber-200 opacity-15 blur-2xl" />
+        <div className="absolute left-0 -translate-x-1/2 top-[90%] w-64 h-64 lg:w-96 lg:h-96 rounded-full bg-orange-200 opacity-15 blur-2xl" />
+      </div>
+      <div className="container mx-auto px-4 relative z-10">
         {/* Section Header */}
         <div className="text-center mb-14 relative">
-          <span className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-[8rem] sm:text-[14rem] font-black text-orange-50/40 select-none -z-10">CORE</span>
           <div className="relative z-10">
             <span className="text-[#ff9900] font-bold tracking-[0.4em] text-sm uppercase mb-4 block">Functions</span>
             <h2 className="text-[1.2rem] xs:text-[1.35rem] sm:text-5xl font-black text-jp-navy mt-4 leading-tight whitespace-nowrap">なぜ100万人超のセラーに選ばれるのか</h2>

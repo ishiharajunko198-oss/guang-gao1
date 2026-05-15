@@ -21,7 +21,7 @@ const Support: React.FC = () => {
               <HeadphonesIcon size={32} />
             </div>
             <h3 className="text-lg font-bold mb-2">無料相談</h3>
-            <p className="text-sm text-gray-600">
+            <p className="text-xs text-gray-600">
               Googleミーティング、ZOOMなどにてお打ち合わせを対応させていただきます。お気軽にご連絡ください。
             </p>
           </div>
@@ -30,9 +30,9 @@ const Support: React.FC = () => {
              <div className="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-4 text-jp-blue">
               <BookOpen size={32} />
             </div>
-            <h3 className="text-lg font-bold mb-2">充実のマニュアル完備</h3>
-            <p className="text-sm text-gray-600">
-              機能ごとの詳細な図解マニュアルと動画をご用意。初心者の方でも迷わずご操作いただけます。
+            <h3 className="text-lg font-bold mb-2">機能別マニュアル完備</h3>
+            <p className="text-xs text-gray-600">
+              機能ごとの詳細な図解マニュアルと動画をご用意しております。初心者の方でも迷わずご操作いただけます。
             </p>
           </div>
 
@@ -41,7 +41,7 @@ const Support: React.FC = () => {
               <Video size={32} />
             </div>
             <h3 className="text-lg font-bold mb-2">定期ウェビナー開催</h3>
-            <p className="text-sm text-gray-600">
+            <p className="text-xs text-gray-600">
             ツールの活用方法だけでなく、最新のAmazon運用ノウハウなどを解説する限定セミナーもご用意しております。
             </p>
           </div>

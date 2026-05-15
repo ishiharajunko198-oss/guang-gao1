@@ -44,7 +44,8 @@ const MidSectionCTA: React.FC = () => {
                <span className="font-light opacity-50 text-xl sm:text-2xl md:text-3xl ml-1 sm:mr-3 flex-shrink-0 hidden xs:inline">/</span>
              </div>
              <a 
-               href="#register"
+               href="https://www.sellersprite.com/jp/w/user/signup"
+               target="_blank"
                className="inline-block bg-[#ffc600] hover:bg-[#e6b200] text-[#0f2c4c] font-bold text-base sm:text-lg py-3.5 px-8 sm:px-12 rounded-full shadow-lg shadow-black/10 transition-transform transform hover:-translate-y-1 whitespace-nowrap active:scale-95"
              >
                無料で7日間試してみる
