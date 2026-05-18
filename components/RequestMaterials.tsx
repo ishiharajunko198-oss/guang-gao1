@@ -21,7 +21,7 @@ type Props = {
 
 const ModalBG: React.FC<Props> = ({isOpen, onClose}) => {
   return <div
-    className={`fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/45
+    className={`fixed inset-0 z-[102] flex items-center justify-center p-4 bg-black/45
       transition-opacity duration-200
       ${isOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}`}
     onClick={(e) => {
@@ -154,7 +154,7 @@ const RequestMaterials: React.FC<Props> = ({isOpen, onClose}) => {
   if (isSuccess) {
     return (<>
       <section
-        className={`${isOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"} fixed inset-0 top-1/2 transform -translate-y-1/2 z-[51] overflow-hidden max-w-2xl h-fit max-h-[90vh] mx-auto bg-white shadow-[0_40px_100px_rgba(15,44,76,0.08)] rounded-[2rem] border border-gray-100`}>
+        className={`${isOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"} fixed inset-0 top-1/2 transform -translate-y-1/2 z-[103] overflow-hidden max-w-2xl h-fit max-h-[90vh] mx-auto bg-white shadow-[0_40px_100px_rgba(15,44,76,0.08)] rounded-[2rem] border border-gray-100`}>
         <div className="overflow-y-auto">
         <div
           className="overflow-y-auto w-full p-12 text-center animate-in zoom-in-95 duration-500">
@@ -173,13 +173,14 @@ const RequestMaterials: React.FC<Props> = ({isOpen, onClose}) => {
             <a
               href="https://o.sellersprite.com/ss_jp/introduction/2026%E5%B9%B4SellerSprite%E3%82%B5%E3%83%BC%E3%83%92%E3%82%99%E3%82%B9%E7%B4%B9%E4%BB%8B.pdf"
               download="セラースプライト会社紹介資料.pdf"
+              target="_blank"
               className="bg-[#ff9900] hover:bg-[#ff7700] text-white px-10 py-4 rounded-full font-black flex items-center gap-3 shadow-xl transition-all transform hover:-translate-y-1 active:scale-95"
             >
               <Download size={20}/>
               資料をダウンロードする
             </a>
           </div>
-          <button onClick={() => window.location.hash = ''}
+          <button onClick={onClose}
                   className="text-gray-400 font-bold hover:text-jp-navy underline text-sm transition-colors">
             トップページに戻る
           </button>
@@ -192,7 +193,7 @@ const RequestMaterials: React.FC<Props> = ({isOpen, onClose}) => {
 
   return (<>
       <section
-        className={`${isOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"} fixed inset-0 top-1/2 transform -translate-y-1/2 z-[51] overflow-hidden min-h-[90vh] max-h-[90vh] mx-auto max-w-6xl bg-white shadow-[0_40px_100px_rgba(15,44,76,0.08)] rounded-[2rem] border border-gray-100`}>
+        className={`${isOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"} fixed inset-0 top-1/2 transform -translate-y-1/2 z-[103] overflow-hidden min-h-[90vh] max-h-[90vh] mx-auto max-w-6xl bg-white shadow-[0_40px_100px_rgba(15,44,76,0.08)] rounded-[2rem] border border-gray-100`}>
         <div className="overflow-y-auto h-full">
           <div className="flex flex-col lg:flex-row">
             {/* 左侧: 资料内容介绍 (Introduction sections with H tags for SEO) */}
@@ -251,7 +252,7 @@ const RequestMaterials: React.FC<Props> = ({isOpen, onClose}) => {
             {/* 右侧: 资料请求表单 (Main page H1 located here) */}
             <main className="lg:w-2/3 p-8 lg:p-16">
               <div className="mb-10 text-center lg:text-left">
-                <h1 className="text-2xl font-black text-jp-navy mb-2 tracking-tight">お問い合わせ・資料請求</h1>
+                <h2 className="text-2xl font-black text-jp-navy mb-2 tracking-tight">お問い合わせ・資料請求</h2>
                 <p className="text-gray-400 text-xs">以下のフォームに必要事項をご記入ください。</p>
               </div>
 

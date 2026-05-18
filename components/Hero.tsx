@@ -12,7 +12,7 @@ const Hero: React.FC<Props> = ({setOpenModal}) => {
   // };
 
   return (
-    <section className="relative pt-16 pb-36 lg:pt-20 lg:pb-16 overflow-hidden flex justify-center font-['Noto_Sans_JP']" style={{ background: 'linear-gradient(180deg, #fff3de, white)' }}>
+    <section className="relative pt-10 pb-36 lg:pb-16 overflow-hidden flex justify-center font-['Noto_Sans_JP']" style={{ background: 'linear-gradient(180deg, #fff3de, white)' }}>
       <div className="absolute inset-0 z-0 pointer-events-none opacity-[0.4]" style={{ backgroundImage: 'radial-gradient(#ffd8a8 0.5px, transparent 0.5px)', backgroundSize: '30px 30px' }}></div>
 
       <div className="absolute inset-0 z-0 pointer-events-none opacity-[0.15]">
